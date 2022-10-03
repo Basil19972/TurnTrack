@@ -18,8 +18,7 @@ public interface UserService extends UserDetailsService, ExtendedService<User> {
 
     User lockUser(UUID id);
 
-    UserIdNameAndPriceSpendDTO getUserSpendTheMost();
-    List<NameSumDisxountDTO> getUsersSumDiscount(String date1, String date2);
+
 
 
 }

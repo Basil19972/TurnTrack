@@ -1,7 +1,6 @@
 package com.example.jwt.domain.user;
 
 import com.example.jwt.core.generic.ExtendedEntityAudit;
-import com.example.jwt.domain.rank.Rank;
 import com.example.jwt.domain.role.Role;
 
 import javax.persistence.*;
@@ -32,12 +31,7 @@ public class User extends ExtendedEntityAudit {
     @Column(name = "notLocked")
     private boolean notLocked;
 
-    @ManyToOne
-    @JoinColumn(name = "rank_id", nullable = true)
-    private Rank rank;
 
-    @Column(name = "seeds")
-    private int seeds;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinTable(
@@ -49,7 +43,7 @@ public class User extends ExtendedEntityAudit {
 
 
 
-    public User(UUID uuid, String firstName, String lastName, int age, String email, String password, boolean notLocked, Rank rank, int seeds, Set<Role> roles) {
+    public User(UUID uuid, String firstName, String lastName, int age, String email, String password, boolean notLocked, Set<Role> roles) {
 
         this.firstName = firstName;
         this.lastName = lastName;
@@ -57,12 +51,11 @@ public class User extends ExtendedEntityAudit {
         this.email = email;
         this.password = password;
         this.notLocked = notLocked;
-        this.rank = rank;
-        this.seeds = seeds;
+
         this.roles = roles;
         super.setId(uuid);
     }
-    public User( String firstName, String lastName, int age, String email, String password, boolean notLocked, Rank rank, int seeds, Set<Role> roles) {
+    public User( String firstName, String lastName, int age, String email, String password, boolean notLocked, Set<Role> roles) {
 
         this.firstName = firstName;
         this.lastName = lastName;
@@ -70,8 +63,7 @@ public class User extends ExtendedEntityAudit {
         this.email = email;
         this.password = password;
         this.notLocked = notLocked;
-        this.rank = rank;
-        this.seeds = seeds;
+
         this.roles = roles;
 
     }
@@ -111,13 +103,7 @@ public class User extends ExtendedEntityAudit {
         this.password = password;
     }
 
-    public Rank getRank() {
-        return rank;
-    }
 
-    public void setRank(Rank rank) {
-        this.rank = rank;
-    }
 
     public Set<Role> getRoles() {
         return roles;
@@ -127,13 +113,7 @@ public class User extends ExtendedEntityAudit {
         this.roles = roles;
     }
 
-    public int getSeeds() {
-        return seeds;
-    }
 
-    public void setSeeds(int seeds) {
-        this.seeds = seeds;
-    }
 
     public int getAge() {
         return age;

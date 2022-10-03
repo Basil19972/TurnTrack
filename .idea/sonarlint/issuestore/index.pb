@@ -17,8 +17,6 @@ p
 @src/main/java/com/example/jwt/domain/country/dto/CountryDTO.java,6/7/67be817b3c8108fd14dc4de5a797d1e9dca1dd58
 
 Osrc/main/java/com/example/jwt/domain/category/dto/CategoryNameWhitCountDTO.java,b/7/b7e6d5497ff5ddcf1975ab1af092c151f602e2ca
-c
-3src/main/java/com/example/jwt/domain/rank/Rank.java,b/9/b9064dee5744827d20bab225a3fc061e5d5eb46f
 m
 =src/main/java/com/example/jwt/domain/rank/RankRepository.java,4/5/451506d25ae515fcfea7c5495ecc03cfd8381f5a
 m
@@ -49,10 +47,6 @@ o
 ?src/main/java/com/example/jwt/domain/order/OrderController.java,b/3/b3e83d5ad0d32d8847fe0724974404b1b9817ee5
 l
 <src/main/java/com/example/jwt/domain/order/dto/OrderDTO.java,2/3/23ac93eeabc57dc18130fae1fc4f3d25ca66dd39
-n
->src/main/java/com/example/jwt/core/generic/ExtendedEntity.java,1/e/1ef8b78452385b5ff582e88577d1678ede7eca9a
-s
-Csrc/main/java/com/example/jwt/core/generic/ExtendedEntityAudit.java,a/8/a8753fe80af588ab8a6f5b210164f04c9d4b99eb
 z
 Jsrc/main/java/com/example/jwt/core/security/CustomAuthorizationFilter.java,0/5/05f66a6e6b7a03610fd58dfc2344b74eda6db1ca
 }
@@ -61,20 +55,14 @@ Msrc/test/java/com/example/jwt/domain/order/unit/OrderRepositoryUnitTests.java,
 Psrc/test/java/com/example/jwt/domain/order/integration/OrderIntegrationTest.java,0/d/0d7f7f3c6575241cad8156ecb07f6f53553ef7a1
 ~
 Nsrc/test/java/com/example/jwt/domain/order/unit/OrderConttrollerUnitTests.java,9/9/99845bcd8837eecfc3f7f33261beea4a41603f1d
-c
-3src/main/java/com/example/jwt/domain/user/User.java,d/6/d60733a6debbb5040c7f7a070481dcb334583398
 p
 @src/main/java/com/example/jwt/domain/order/OrderServiceImpl.java,9/4/94e3c05b46089c0541e697a6d990931cde79ffda
 t
 Dsrc/main/java/com/example/jwt/core/exception/UserNot18Exception.java,1/c/1ca9b8e29da14c5a74871afb73ac31e2103035a6
 l
 <src/test/java/category/unit/CategoryRepositoryUnitTests.java,8/5/856af5edd4d8343ba2f0e609d0982a95f8cf0437
-j
-:src/main/java/com/example/jwt/domain/user/UserService.java,7/7/77545813808a2ddedc72479b4b29a947b3c1943d
 l
 <src/main/java/com/example/jwt/domain/order/OrderService.java,5/2/52cea3c68457cc923d2b819f7be536516368d6c0
-n
->src/main/java/com/example/jwt/domain/user/UserServiceImpl.java,9/5/9515fcbeb274278b95e231d08450acc582f397e7
 <
 build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
 y

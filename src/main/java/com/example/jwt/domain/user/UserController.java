@@ -26,18 +26,9 @@ public class UserController {
         this.userMapper = userMapper;
     }
 
-    @GetMapping("/stat1")
-    @PreAuthorize("hasAuthority('CAN_SEE_STATISTICS')")
-    public ResponseEntity<UserIdNameAndPriceSpendDTO> getUserSpendTheMost() {
-        return new ResponseEntity<>(userService.getUserSpendTheMost(), HttpStatus.OK);
-    }
 
-    @GetMapping(value = "/{date1}/{date2}")
-    @PreAuthorize("hasAuthority('CAN_SEE_STATISTICS')")
-    public ResponseEntity<List<NameSumDisxountDTO>> getUserDiscountSum(@PathVariable String date1, @PathVariable String date2) {
 
-        return new ResponseEntity<>(userService.getUsersSumDiscount(date1, date2), HttpStatus.OK);
-    }
+
 
     @GetMapping("/{id}")
     @PreAuthorize("hasAuthority('USER_READ')")
@@ -58,6 +49,7 @@ public class UserController {
 
     @PostMapping("/register")
     public ResponseEntity<UserDTO> register(@Validated @RequestBody UserRegisterDTO userRegisterDTO) {
+
         User user = userService.register(userMapper.fromUserRegisterDTO(userRegisterDTO));
         return new ResponseEntity<>(userMapper.toDTO(user), HttpStatus.CREATED);
     }

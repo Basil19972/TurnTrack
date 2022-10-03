@@ -1,17 +1,21 @@
-package com.example.jwt.domain.planCategory;
+package com.example.jwt.domain.day;
 
 import com.example.jwt.core.generic.ExtendedEntity;
 import lombok.Data;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "PlanCategory")
+@Table(name = "days")
 @Data
-public class PlanCategory extends ExtendedEntity {
+public class Day extends ExtendedEntity {
 
+    @Column(name = "name", nullable = false)
     private String name;
+
+
 
 
 }
