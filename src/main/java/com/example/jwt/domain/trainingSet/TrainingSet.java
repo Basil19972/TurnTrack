@@ -9,7 +9,6 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Set")
-@Data
 public class TrainingSet extends ExtendedEntity {
 
     @Column(name = "weight", nullable = false)
@@ -22,5 +21,36 @@ public class TrainingSet extends ExtendedEntity {
     @JoinColumn(name = "excercise_id")
     private Excercise excercise;
 
+    public TrainingSet(int weight, int repetitions, Excercise excercise) {
+        this.weight = weight;
+        this.repetitions = repetitions;
+        this.excercise = excercise;
+    }
 
+    public TrainingSet() {
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public int getRepetitions() {
+        return repetitions;
+    }
+
+    public void setRepetitions(int repetitions) {
+        this.repetitions = repetitions;
+    }
+
+    public Excercise getExcercise() {
+        return excercise;
+    }
+
+    public void setExcercise(Excercise excercise) {
+        this.excercise = excercise;
+    }
 }

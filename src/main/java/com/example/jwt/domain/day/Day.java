@@ -9,13 +9,24 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "days")
-@Data
 public class Day extends ExtendedEntity {
 
     @Column(name = "name", nullable = false)
     private String name;
 
+    public Day(String name) {
+        this.name = name;
+    }
 
+    public Day() {
 
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

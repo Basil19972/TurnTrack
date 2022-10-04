@@ -5,5 +5,7 @@ import com.example.jwt.domain.day.Day;
 
 public interface PlanService extends ExtendedService<Plan> {
 
+    Plan createPlan(Plan plan);
+
 
 }

@@ -8,10 +8,22 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "PlanCategory")
-@Data
 public class PlanCategory extends ExtendedEntity {
 
     private String name;
 
+    public PlanCategory(String name) {
+        this.name = name;
+    }
 
+    public PlanCategory() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
