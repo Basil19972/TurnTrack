@@ -33,6 +33,10 @@ public class PlanController {
     @PostMapping()
     @PreAuthorize("hasAuthority('PLAN_WRITE')")
     public ResponseEntity<PlanDTO> createPlan(@RequestBody PlanDTO planDTO) {
+
+        planDTO.getExercises().forEach(exerciseDTO -> System.out.println(exerciseDTO.getName()));
+        planDTO.getExercises().forEach(excercise -> System.out.println(excercise.getTrainingSets()));
+
         return new ResponseEntity<>(planMapper.toDTO(planService.createPlan(planMapper.fromDTO(planDTO))), HttpStatus.CREATED);
     }
 

@@ -11,17 +11,17 @@ public class PlanDTO extends ExtendedDTO {
 
     private String name;
 
-    private DayDTO dayDTO;
+    private DayDTO day;
 
-    private Set<ExerciseDTO> exerciseDTOS;
+    private Set<ExerciseDTO> exercises;
 
-    private PlanCategoryDTO planCategoryDTO;
+    private PlanCategoryDTO planCategory;
 
-    public PlanDTO(String name, DayDTO dayDTO, Set<ExerciseDTO> exerciseDTOS, PlanCategoryDTO planCategoryDTO) {
+    public PlanDTO(String name, DayDTO day, Set<ExerciseDTO> exercises, PlanCategoryDTO planCategory) {
         this.name = name;
-        this.dayDTO = dayDTO;
-        this.exerciseDTOS = exerciseDTOS;
-        this.planCategoryDTO = planCategoryDTO;
+        this.day = day;
+        this.exercises = exercises;
+        this.planCategory = planCategory;
     }
 
     public String getName() {
@@ -32,27 +32,27 @@ public class PlanDTO extends ExtendedDTO {
         this.name = name;
     }
 
-    public DayDTO getDayDTO() {
-        return dayDTO;
+    public DayDTO getDay() {
+        return day;
     }
 
-    public void setDayDTO(DayDTO dayDTO) {
-        this.dayDTO = dayDTO;
+    public void setDay(DayDTO day) {
+        this.day = day;
     }
 
-    public Set<ExerciseDTO> getExerciseDTOS() {
-        return exerciseDTOS;
+    public Set<ExerciseDTO> getExercises() {
+        return exercises;
     }
 
-    public void setExerciseDTOS(Set<ExerciseDTO> exerciseDTOS) {
-        this.exerciseDTOS = exerciseDTOS;
+    public void setExercises(Set<ExerciseDTO> exercises) {
+        this.exercises = exercises;
     }
 
-    public PlanCategoryDTO getPlanCategoryDTO() {
-        return planCategoryDTO;
+    public PlanCategoryDTO getPlanCategory() {
+        return planCategory;
     }
 
-    public void setPlanCategoryDTO(PlanCategoryDTO planCategoryDTO) {
-        this.planCategoryDTO = planCategoryDTO;
+    public void setPlanCategory(PlanCategoryDTO planCategory) {
+        this.planCategory = planCategory;
     }
 }

@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "Set")
+@Table(name = "TrainingSet")
 public class TrainingSet extends ExtendedEntity {
 
     @Column(name = "weight", nullable = false)
@@ -17,17 +17,18 @@ public class TrainingSet extends ExtendedEntity {
     @Column(name = "repetitions", nullable = false)
     private int repetitions;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "excercise_id")
-    private Excercise excercise;
+    private Excercise exercise;
 
-    public TrainingSet(int weight, int repetitions, Excercise excercise) {
+    public TrainingSet(int weight, int repetitions, Excercise exercise) {
         this.weight = weight;
         this.repetitions = repetitions;
-        this.excercise = excercise;
+        this.exercise = exercise;
     }
 
     public TrainingSet() {
+
     }
 
     public int getWeight() {
@@ -46,11 +47,11 @@ public class TrainingSet extends ExtendedEntity {
         this.repetitions = repetitions;
     }
 
-    public Excercise getExcercise() {
-        return excercise;
+    public Excercise getExercise() {
+        return exercise;
     }
 
-    public void setExcercise(Excercise excercise) {
-        this.excercise = excercise;
+    public void setExercise(Excercise exercise) {
+        this.exercise = exercise;
     }
 }

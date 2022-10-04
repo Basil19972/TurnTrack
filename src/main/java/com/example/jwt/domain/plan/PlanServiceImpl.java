@@ -4,6 +4,7 @@ import com.example.jwt.domain.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.sql.Date;
 import java.time.LocalDate;
 
@@ -22,19 +23,22 @@ public class PlanServiceImpl extends ExtendedServiceImpl<Plan> implements PlanSe
 
 
     @Override
+    @Transactional
     public Plan createPlan(Plan plan) {
 
-        Plan plan1 = new Plan();
 
-        System.out.println(plan.getDay());
+      plan.getExercises().forEach(excercise -> System.out.println(excercise.getTrainingSets()));
 
-        plan1.setName(plan.getName());
-        plan1.setDay(plan.getDay());
-        plan1.setExcercises(plan.getExcercises());
-        plan1.setAppuser(userService.getCurrentUser());
-        plan1.setDate(Date.valueOf(LocalDate.now()));
-        plan1.setPlanCategory(plan.getPlanCategory());
 
-        return super.getRepository().save(plan1);
+        plan.setAppuser(userService.getCurrentUser());
+        plan.setDate(Date.valueOf(LocalDate.now()));
+
+
+
+        super.save(plan);
+
+
+
+        return null;
     }
 }

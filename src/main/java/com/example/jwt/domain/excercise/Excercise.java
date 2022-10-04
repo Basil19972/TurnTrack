@@ -14,11 +14,11 @@ public class Excercise extends ExtendedEntity {
 
     private String name;
 
-    @OneToMany(mappedBy = "excercise", cascade = CascadeType.PERSIST )
+    @OneToMany(mappedBy = "exercise", cascade = CascadeType.PERSIST )
     private Set<TrainingSet> trainingSets;
 
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "plan_id")
     private Plan plan;
 

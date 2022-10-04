@@ -14,12 +14,11 @@ public class ExerciseDTO extends ExtendedDTO {
 
     private String name;
 
-    private Set<TrainingSetDTO> trainingSetDTOS;
+    private Set<TrainingSetDTO> trainingSets;
 
-
-    public ExerciseDTO(String name, Set<TrainingSetDTO> trainingSetDTOS) {
+    public ExerciseDTO(String name, Set<TrainingSetDTO> trainingSets) {
         this.name = name;
-        this.trainingSetDTOS = trainingSetDTOS;
+        this.trainingSets = trainingSets;
     }
 
     public String getName() {
@@ -30,11 +29,11 @@ public class ExerciseDTO extends ExtendedDTO {
         this.name = name;
     }
 
-    public Set<TrainingSetDTO> getTrainingSetDTOS() {
-        return trainingSetDTOS;
+    public Set<TrainingSetDTO> getTrainingSets() {
+        return trainingSets;
     }
 
-    public void setTrainingSetDTOS(Set<TrainingSetDTO> trainingSetDTOS) {
-        this.trainingSetDTOS = trainingSetDTOS;
+    public void setTrainingSets(Set<TrainingSetDTO> trainingSets) {
+        this.trainingSets = trainingSets;
     }
 }

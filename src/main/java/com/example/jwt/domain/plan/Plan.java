@@ -21,32 +21,28 @@ public class Plan extends ExtendedEntity {
     @Column(name = "date", nullable = false)
     private Date date;
 
-    @ManyToOne
-    @JoinColumn(name = "day_id", nullable = true)
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "day_id", nullable = false)
     private Day day;
 
     @OneToMany(mappedBy = "plan", cascade = CascadeType.PERSIST )
-    private Set<Excercise> excercises;
+    private Set<Excercise> exercises;
 
-    @ManyToOne
-    @JoinColumn(name = "plancategory_id", nullable = true)
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "plancategory_id", nullable = false)
     private PlanCategory planCategory;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = true)
+    @JoinColumn(name = "user_id", nullable = false)
     private User appuser;
 
-    public Plan(String name, Date date, Day day, Set<Excercise> excercises, PlanCategory planCategory, User appuser) {
+    public Plan(String name, Date date, Day day, Set<Excercise> exercises, PlanCategory planCategory, User appuser) {
         this.name = name;
         this.date = date;
         this.day = day;
-        this.excercises = excercises;
+        this.exercises = exercises;
         this.planCategory = planCategory;
         this.appuser = appuser;
-    }
-
-    public Plan() {
-
     }
 
     public String getName() {
@@ -73,12 +69,12 @@ public class Plan extends ExtendedEntity {
         this.day = day;
     }
 
-    public Set<Excercise> getExcercises() {
-        return excercises;
+    public Set<Excercise> getExercises() {
+        return exercises;
     }
 
-    public void setExcercises(Set<Excercise> excercises) {
-        this.excercises = excercises;
+    public void setExercises(Set<Excercise> exercises) {
+        this.exercises = exercises;
     }
 
     public PlanCategory getPlanCategory() {

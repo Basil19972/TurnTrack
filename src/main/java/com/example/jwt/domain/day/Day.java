@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table(name = "days")
 public class Day extends ExtendedEntity {
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name", nullable = true)
     private String name;
 
     public Day(String name) {
