@@ -1,12 +1,12 @@
-package com.example.jwt.domain.excercise.dto;
+package com.example.jwt.domain.weekPlan.dto;
 
 import com.example.jwt.core.generic.ExtendedMapper;
-import com.example.jwt.domain.excercise.Exercise;
+import com.example.jwt.domain.weekPlan.WeekPlan;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
-public interface ExerciseMapper extends ExtendedMapper<Exercise, ExerciseDTO> {
+public interface WeekPlanMapper extends ExtendedMapper<WeekPlan, PlanDTO> {
 
 
 }

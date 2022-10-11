@@ -12,4 +12,8 @@ public class TrainingSetServiceImpl extends ExtendedServiceImpl<TrainingSet> imp
     public TrainingSetServiceImpl(TrainingSetRepository repository) {
         super(repository);
     }
+
+
+
+
 }

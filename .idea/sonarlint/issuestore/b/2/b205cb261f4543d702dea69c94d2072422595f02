@@ -1,0 +1,7 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ç—¯ûÿÿÿÿ
+X	java:S125$"<This block of commented-out lines of code should be removed.(ÎÂÊ–8‘‹Ããº0
+Q
+java:S1068"4Remove this unused "monthPlanService" private field.(øÖÆï8”‹Ããº0
+U
+java:S1068"3Remove this unused "monthPlanMapper" private field.(‘¡úÿÿÿÿ8”‹Ããº0

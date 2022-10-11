@@ -1,8 +1,8 @@
 package com.example.jwt.domain.trainingSet;
 
 import com.example.jwt.core.generic.ExtendedEntity;
-import com.example.jwt.domain.excercise.Excercise;
-import lombok.Data;
+import com.example.jwt.core.generic.ExtendedEntityAudit;
+import com.example.jwt.domain.excercise.Exercise;
 
 import javax.persistence.*;
 
@@ -19,9 +19,12 @@ public class TrainingSet extends ExtendedEntity {
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "excercise_id")
-    private Excercise exercise;
+    private Exercise exercise;
 
-    public TrainingSet(int weight, int repetitions, Excercise exercise) {
+
+
+
+    public TrainingSet(int weight, int repetitions, Exercise exercise) {
         this.weight = weight;
         this.repetitions = repetitions;
         this.exercise = exercise;
@@ -47,11 +50,12 @@ public class TrainingSet extends ExtendedEntity {
         this.repetitions = repetitions;
     }
 
-    public Excercise getExercise() {
+    public Exercise getExercise() {
         return exercise;
     }
 
-    public void setExercise(Excercise exercise) {
+    public void setExercise(Exercise exercise) {
         this.exercise = exercise;
+
     }
 }
