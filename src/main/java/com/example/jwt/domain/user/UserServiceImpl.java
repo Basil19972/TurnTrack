@@ -52,15 +52,13 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
     @Override
     public User register(User user1) {
 
-        User user = new User();
 
-        user.setPassword(bCryptPasswordEncoder.encode(user1.getPassword()));
-        user.setNotLocked(true);
-        user.setRoles(new HashSet<Role>(Arrays.asList(roleService.GetDefaultRole())));
-        user.setEmail(user1.getEmail());
+        user1.setPassword(bCryptPasswordEncoder.encode(user1.getPassword()));
+        user1.setNotLocked(true);
+        user1.setRoles(new HashSet<Role>(Arrays.asList(roleService.GetDefaultRole())));
 
 
-        return super.getRepository().save(user);
+        return super.getRepository().save(user1);
 
 
     }

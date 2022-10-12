@@ -14,9 +14,12 @@ public class WeekDay extends ExtendedEntity {
     @Column(name = "name", nullable = true)
     private String name;
 
-    @JsonIgnore
-    @ManyToMany(mappedBy = "weekDays")
-    private Set<Exercise> exercises;
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @JoinTable(
+            name = "weekDay_exercise",
+            joinColumns = @JoinColumn(name = "weekDay_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "exercise_id", referencedColumnName = "id")
+    )    private Set<Exercise> exercises;
 
     public WeekDay(String name, Set<Exercise> exercises) {
         this.name = name;

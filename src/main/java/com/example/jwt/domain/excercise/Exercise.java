@@ -20,18 +20,10 @@ public class Exercise extends ExtendedEntityAudit {
 
 
 
-    @ManyToMany
-    @JoinTable(
-            name = "exercise_weekday",
-            joinColumns = @JoinColumn(name = "exercise_id"),
-            inverseJoinColumns = @JoinColumn(name = "weekday_id"))
-    private Set<WeekDay> weekDays;
 
-
-    public Exercise(String name, Set<TrainingSet> trainingSets, Set<WeekDay> weekDays) {
+    public Exercise(String name, Set<TrainingSet> trainingSets) {
         this.name = name;
         this.trainingSets = trainingSets;
-        this.weekDays = weekDays;
     }
 
     public Exercise() {
@@ -54,11 +46,4 @@ public class Exercise extends ExtendedEntityAudit {
         this.trainingSets = trainingSets;
     }
 
-    public Set<WeekDay> getWeekDays() {
-        return weekDays;
-    }
-
-    public void setWeekDays(Set<WeekDay> weekDays) {
-        this.weekDays = weekDays;
-    }
 }
