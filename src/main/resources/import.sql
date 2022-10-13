@@ -15,7 +15,9 @@ insert into authorities (id, name) values ('85248618-f314-4e25-ae50-ba7341c146ef
 insert into authorities (id, name) values ('fd22ce26-6e5a-45a7-ab37-2c5e0ca83777', 'WEEKDAY_WRITE');
 insert into authorities (id, name) values ('8e3ad5cf-d25c-47b3-81a2-d2d0a98a0445', 'EXERCISE_WRITE');
 insert into authorities (id, name) values ('52b6c76f-3749-4494-9c91-1c311a544776', 'ORDER_READ');
-insert into authorities (id, name) values ('041ac4c7-3de5-4872-8059-bc9664a9de0a', 'CAN_SEE_STATISTICS');
+insert into authorities (id, name) values ('041ac4c7-3de5-4872-8059-bc9664a9de0a', 'EXERCISE_READ');
+insert into authorities (id, name) values ('8663b6c1-8dbd-445a-8f11-7ca5371519f7', 'USER_WEIGHT_HISTORY_WRITE');
+
 
 
 
@@ -29,6 +31,8 @@ insert into role_authority (role_id, authority_id) values ('a05d3a73-5f6a-4cb3-a
 insert into role_authority (role_id, authority_id) values ('a05d3a73-5f6a-4cb3-ac13-a493163515a4', 'fd22ce26-6e5a-45a7-ab37-2c5e0ca83777');
 insert into role_authority (role_id, authority_id) values ('a05d3a73-5f6a-4cb3-ac13-a493163515a4', '52b6c76f-3749-4494-9c91-1c311a544776');
 insert into role_authority (role_id, authority_id) values ('a05d3a73-5f6a-4cb3-ac13-a493163515a4', '8e3ad5cf-d25c-47b3-81a2-d2d0a98a0445');
+insert into role_authority (role_id, authority_id) values ('a05d3a73-5f6a-4cb3-ac13-a493163515a4', '041ac4c7-3de5-4872-8059-bc9664a9de0a');
+insert into role_authority (role_id, authority_id) values ('a05d3a73-5f6a-4cb3-ac13-a493163515a4', '8663b6c1-8dbd-445a-8f11-7ca5371519f7');
 
 
 /*DEV */
@@ -72,6 +76,8 @@ insert into plan_category (id,name) values ('4277bafa-bcb6-4ee8-b2f8-aa65dceaf77
 insert into plan_category (id,name) values ('d9caa201-a093-4cec-b2aa-320277b06271','Medium Weight');
 insert into plan_category (id,name) values ('2d403deb-f02f-41e9-b7a3-767a24a61f90','Light Weight');
 insert into plan_category (id,name) values ('1ea0769d-7736-4e7f-84b9-08d630fc5bd3','Cardio');
+
+/* exercises */
 
 
 

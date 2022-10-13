@@ -1,0 +1,16 @@
+
+{
+java:S2293:"YReplace the type specification in this constructor call with the diamond operator ("<>").(¢Ûçùÿÿÿÿ8Î¾Ñî¼0
+r
+java:S1488X"\Immediately return this expression instead of assigning it to the temporary variable "user".(˜°‚ş
+k
+java:S1128
+"ORemove this unused import 'com.example.jwt.domain.user.dto.NameSumDisxountDTO'.(ãÒt8ôëÒî¼0
+y
+java:S1128"WRemove this unused import 'com.example.jwt.domain.user.dto.UserIdNameAndPriceSpendDTO'.(Û¶Šèÿÿÿÿÿ8ôëÒî¼0
+K
+java:S1128"/Remove this unused import 'java.sql.Timestamp'.(èò½+8õëÒî¼0
+R
+java:S1128"5Remove this unused import 'java.text.ParseException'.(ñ®ï•8õëÒî¼0
+T
+java:S1128"7Remove this unused import 'java.text.SimpleDateFormat'.(ú¡ÙÛ8õëÒî¼0

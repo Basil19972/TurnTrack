@@ -8,7 +8,7 @@ public interface ExerciseService extends ExtendedService<Exercise> {
 
     Exercise findByID(UUID id);
 
-    Exercise create(Exercise exercise);
+    Exercise create(Exercise exercise,int setNumber);
 
 
 
