@@ -17,6 +17,8 @@ insert into authorities (id, name) values ('8e3ad5cf-d25c-47b3-81a2-d2d0a98a0445
 insert into authorities (id, name) values ('52b6c76f-3749-4494-9c91-1c311a544776', 'ORDER_READ');
 insert into authorities (id, name) values ('041ac4c7-3de5-4872-8059-bc9664a9de0a', 'EXERCISE_READ');
 insert into authorities (id, name) values ('8663b6c1-8dbd-445a-8f11-7ca5371519f7', 'USER_WEIGHT_HISTORY_WRITE');
+insert into authorities (id, name) values ('c4a81033-d3d6-4a4e-99aa-b54b1af3777f', 'USER_BMI_READ');
+
 
 
 
@@ -33,6 +35,7 @@ insert into role_authority (role_id, authority_id) values ('a05d3a73-5f6a-4cb3-a
 insert into role_authority (role_id, authority_id) values ('a05d3a73-5f6a-4cb3-ac13-a493163515a4', '8e3ad5cf-d25c-47b3-81a2-d2d0a98a0445');
 insert into role_authority (role_id, authority_id) values ('a05d3a73-5f6a-4cb3-ac13-a493163515a4', '041ac4c7-3de5-4872-8059-bc9664a9de0a');
 insert into role_authority (role_id, authority_id) values ('a05d3a73-5f6a-4cb3-ac13-a493163515a4', '8663b6c1-8dbd-445a-8f11-7ca5371519f7');
+insert into role_authority (role_id, authority_id) values ('a05d3a73-5f6a-4cb3-ac13-a493163515a4', 'c4a81033-d3d6-4a4e-99aa-b54b1af3777f');
 
 
 /*DEV */
@@ -60,14 +63,7 @@ insert into role_authority (role_id, authority_id) values ('8383b369-3f33-4b39-9
 
 
 
-/*Day*/
-insert into week_day (id,name) values ('4c92eeda-89f0-4172-98f9-dba03778bd25','Monday');
-insert into week_day (id,name) values ('16cd12f0-307b-4daa-965f-a55accff08b4','Tuesday');
-insert into week_day (id,name) values ('abaafda2-68d5-41c6-bdb8-14d83c29f0fd','Wednesday');
-insert into week_day (id,name) values ('8338a431-d1a4-480f-839f-4fb4215dbeb8','Thursday');
-insert into week_day (id,name) values ('569fe7f0-1aac-4c62-b5ec-aad9dfaf2978','Friday');
-insert into week_day (id,name) values ('962ea06d-25dc-4539-8b88-140a24a3dbe6','Saturday');
-insert into week_day (id,name) values ('632c63d9-a685-4289-b9d5-2f0fc7026818','Sunday');
+
 
 
 

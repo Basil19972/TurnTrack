@@ -15,6 +15,8 @@ public class UserRegisterDTO extends ExtendedDTO {
 
     private int age;
 
+    private Double height;
+
     @Email
     private String email;
 
@@ -22,17 +24,27 @@ public class UserRegisterDTO extends ExtendedDTO {
 
     private Set<RoleDTO> roles;
 
-    public UserRegisterDTO() {
+    public UserRegisterDTO(Double height) {
+        this.height = height;
     }
 
-    public UserRegisterDTO(UUID id, String firstName, String lastName, int age, String email, String password, Set<RoleDTO> roles) {
+    public UserRegisterDTO(UUID id, String firstName, String lastName, int age, Double height, String email, String password, Set<RoleDTO> roles) {
         super(id);
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
+        this.height = height;
         this.email = email;
         this.password = password;
         this.roles = roles;
+    }
+
+    public Double getHeight() {
+        return height;
+    }
+
+    public void setHeight(Double height) {
+        this.height = height;
     }
 
     public String getFirstName() {

@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ExerciseRepository extends ExtendedRepository<Exercise> {
 
+    Exercise findByName(String name);
+
 }

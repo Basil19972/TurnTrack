@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
-import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.UUID;
 
@@ -16,13 +15,15 @@ public class ExerciseServiceImpl extends ExtendedServiceImpl<Exercise> implement
 
     private final UserService userService;
     private final TrainingSetService trainingSetService;
+    private final ExerciseRepository exerciseRepository;
 
 
     @Autowired
-    protected ExerciseServiceImpl(ExerciseRepository exerciseRepository, UserService userService, TrainingSetService trainingSetService) {
+    protected ExerciseServiceImpl(ExerciseRepository exerciseRepository, UserService userService, TrainingSetService trainingSetService, ExerciseRepository exerciseRepository1) {
         super(exerciseRepository);
         this.userService = userService;
         this.trainingSetService = trainingSetService;
+        this.exerciseRepository = exerciseRepository1;
     }
 
 
@@ -35,6 +36,11 @@ public class ExerciseServiceImpl extends ExtendedServiceImpl<Exercise> implement
 
     @Override
     public Exercise create(Exercise exercise,int setNumber) {
+
+        if(exerciseRepository.findByName(exercise.getName())!=null){
+            throw new RuntimeException("Your Exercise with this name already exists");
+        }
+
 
         // Fill an Exercise whit amount off empty Trainings sets to Fill whit values later
         Set<TrainingSet> trainingSets = new HashSet<>();
@@ -69,7 +75,7 @@ public class ExerciseServiceImpl extends ExtendedServiceImpl<Exercise> implement
         //Create a get all endpoint to send all the empty exercise whit the emty trainings set to let them update propertly
 
             //Set ID to TrainingSet Table after the exercise is saved
-            exercisenew.getTrainingSets().forEach(trainingSet -> {
+            exercisenew.getTrainingSets().forEach(trainingSet -> { trainingSet.setRepetitions(0);
                 trainingSet.setExercise(exerciseinDB); trainingSetService.updateById(trainingSet.getId(),trainingSet);
             });
                 return findByID(exerciseinDB.getId());

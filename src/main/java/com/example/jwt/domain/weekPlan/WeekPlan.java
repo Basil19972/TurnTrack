@@ -19,9 +19,11 @@ public class WeekPlan extends ExtendedEntityAudit {
     @Column(name = "date", nullable = false)
     private Date date;
 
+
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "day_id", nullable = false)
     private WeekDay weekDay;
+
 
 
     @ManyToOne

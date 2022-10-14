@@ -22,6 +22,9 @@ public class User extends ExtendedEntityAudit {
     @Column(name = "age", nullable = false)
     private int age;
 
+    @Column(name = "height", nullable = false)
+    private Double height;
+
     @Column(name = "email", unique = true, nullable = false)
     private String email;
 
@@ -43,11 +46,12 @@ public class User extends ExtendedEntityAudit {
 
 
 
-    public User(UUID uuid, String firstName, String lastName, int age, String email, String password, boolean notLocked, Set<Role> roles) {
+    public User(UUID uuid, String firstName, String lastName, int age, Double height, String email, String password, boolean notLocked, Set<Role> roles) {
 
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
+        this.height = height;
         this.email = email;
         this.password = password;
         this.notLocked = notLocked;
@@ -55,11 +59,12 @@ public class User extends ExtendedEntityAudit {
         this.roles = roles;
         super.setId(uuid);
     }
-    public User( String firstName, String lastName, int age, String email, String password, boolean notLocked, Set<Role> roles) {
+    public User( String firstName, String lastName, int age,Double height, String email, String password, boolean notLocked, Set<Role> roles) {
 
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
+        this.height = height;
         this.email = email;
         this.password = password;
         this.notLocked = notLocked;
@@ -103,7 +108,13 @@ public class User extends ExtendedEntityAudit {
         this.password = password;
     }
 
+    public Double getHeight() {
+        return height;
+    }
 
+    public void setHeight(Double height) {
+        this.height = height;
+    }
 
     public Set<Role> getRoles() {
         return roles;

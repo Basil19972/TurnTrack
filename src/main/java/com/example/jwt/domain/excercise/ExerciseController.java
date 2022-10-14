@@ -54,11 +54,8 @@ public class ExerciseController {
     @GetMapping("")
     @PreAuthorize("hasAuthority('EXERCISE_READ')")
     public ResponseEntity<List<ExerciseDTO>> findAll() {
-
         List<ExerciseDTO> exerciseDTOS = exerciseMapper.toDTOs(exerciseService.findAll());
-
         return new ResponseEntity<>(exerciseDTOS, HttpStatus.OK);
-
     }
 
 
