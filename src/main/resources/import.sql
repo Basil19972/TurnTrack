@@ -18,6 +18,8 @@ insert into authorities (id, name) values ('52b6c76f-3749-4494-9c91-1c311a544776
 insert into authorities (id, name) values ('041ac4c7-3de5-4872-8059-bc9664a9de0a', 'EXERCISE_READ');
 insert into authorities (id, name) values ('8663b6c1-8dbd-445a-8f11-7ca5371519f7', 'USER_WEIGHT_HISTORY_WRITE');
 insert into authorities (id, name) values ('c4a81033-d3d6-4a4e-99aa-b54b1af3777f', 'USER_BMI_READ');
+insert into authorities (id, name) values ('09250646-f1f6-4f59-b783-64fef86a3d2d', 'WEEKPLAN_WRITE');
+
 
 
 
@@ -36,6 +38,8 @@ insert into role_authority (role_id, authority_id) values ('a05d3a73-5f6a-4cb3-a
 insert into role_authority (role_id, authority_id) values ('a05d3a73-5f6a-4cb3-ac13-a493163515a4', '041ac4c7-3de5-4872-8059-bc9664a9de0a');
 insert into role_authority (role_id, authority_id) values ('a05d3a73-5f6a-4cb3-ac13-a493163515a4', '8663b6c1-8dbd-445a-8f11-7ca5371519f7');
 insert into role_authority (role_id, authority_id) values ('a05d3a73-5f6a-4cb3-ac13-a493163515a4', 'c4a81033-d3d6-4a4e-99aa-b54b1af3777f');
+insert into role_authority (role_id, authority_id) values ('a05d3a73-5f6a-4cb3-ac13-a493163515a4', '09250646-f1f6-4f59-b783-64fef86a3d2d');
+
 
 
 /*DEV */

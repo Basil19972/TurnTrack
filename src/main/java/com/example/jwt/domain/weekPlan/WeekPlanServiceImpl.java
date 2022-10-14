@@ -27,6 +27,9 @@ public class WeekPlanServiceImpl extends ExtendedServiceImpl<WeekPlan> implement
     @Override
     public WeekPlan createPlan(WeekPlan weekPlan) {
 
-        return null;
+        weekPlan.setActive(false);
+        weekPlan.setArchived(false);
+
+        return save(weekPlan);
     }
 }

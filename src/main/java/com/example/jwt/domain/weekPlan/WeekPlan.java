@@ -16,25 +16,25 @@ public class WeekPlan extends ExtendedEntityAudit {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "date", nullable = false)
-    private Date date;
+    @Column(name = "active", nullable = false)
+    private Boolean active;
+
+    @Column(name = "archived", nullable = false)
+    private Boolean archived;
 
 
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "day_id", nullable = false)
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "WeekDay_id", nullable = false)
     private WeekDay weekDay;
 
 
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User appuser;
 
-    public WeekPlan(String name, Date date, WeekDay weekDay, User appuser) {
+    public WeekPlan(String name, Boolean active, Boolean archived, WeekDay weekDay) {
         this.name = name;
-        this.date = date;
+        this.active = active;
+        this.archived = archived;
         this.weekDay = weekDay;
-        this.appuser = appuser;
     }
 
     public WeekDay getWeekDay() {
@@ -57,12 +57,20 @@ public class WeekPlan extends ExtendedEntityAudit {
         this.name = name;
     }
 
-    public Date getDate() {
-        return date;
+    public Boolean getActive() {
+        return active;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    public Boolean getArchived() {
+        return archived;
+    }
+
+    public void setArchived(Boolean archived) {
+        this.archived = archived;
     }
 
     public WeekDay getDay() {
@@ -74,11 +82,5 @@ public class WeekPlan extends ExtendedEntityAudit {
     }
 
 
-    public User getAppuser() {
-        return appuser;
-    }
 
-    public void setAppuser(User appuser) {
-        this.appuser = appuser;
-    }
 }

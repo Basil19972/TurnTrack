@@ -1,7 +1,7 @@
 package com.example.jwt.domain.weekPlan;
 
 
-import com.example.jwt.domain.weekPlan.dto.PlanDTO;
+import com.example.jwt.domain.weekPlan.dto.WeekPlanDTO;
 import com.example.jwt.domain.weekPlan.dto.WeekPlanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,10 +29,9 @@ public class WeekPlanController {
 
 
     @PostMapping()
-    @PreAuthorize("hasAuthority('PLAN_WRITE')")
-    public ResponseEntity<PlanDTO> createPlan(@RequestBody PlanDTO planDTO) {
-
-        return new ResponseEntity<>(weekPlanMapper.toDTO(weekPlanService.createPlan(weekPlanMapper.fromDTO(planDTO))), HttpStatus.CREATED);
+    @PreAuthorize("hasAuthority('WEEKPLAN_WRITE')")
+    public ResponseEntity<WeekPlanDTO> createPlan(@RequestBody WeekPlanDTO weekPlanDTO) {
+        return new ResponseEntity<>(weekPlanMapper.toDTO(weekPlanService.createPlan(weekPlanMapper.fromDTO(weekPlanDTO))), HttpStatus.CREATED);
     }
 
 
