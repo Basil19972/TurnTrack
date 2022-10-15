@@ -1,0 +1,8 @@
+
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(АФЛ3
+T
+java:S1854$">Remove this useless assignment to local variable "heightUser".(Кашк
+E
+java:S1481$"/Remove this unused "heightUser" local variable.(Кашк
+I
+java:S1068"3Remove this unused "exerciseService" private field.(мђћ‘

@@ -38,10 +38,10 @@ public class ExerciseController {
     }
      */
 
-    @PostMapping("/{setNumber}")
+    @PostMapping("")
     @PreAuthorize("hasAuthority('EXERCISE_WRITE')")
-    public ResponseEntity<ExerciseDTO> createExercise(@PathVariable int setNumber, @RequestBody ExerciseDTO exerciseDTO) {
-        return new ResponseEntity<>(exerciseMapper.toDTO(exerciseService.create(exerciseMapper.fromDTO(exerciseDTO),setNumber)), HttpStatus.CREATED);
+    public ResponseEntity<ExerciseDTO> createExercise(@RequestBody ExerciseDTO exerciseDTO) {
+        return new ResponseEntity<>(exerciseMapper.toDTO(exerciseService.save(exerciseMapper.fromDTO(exerciseDTO))), HttpStatus.CREATED);
     }
 
 

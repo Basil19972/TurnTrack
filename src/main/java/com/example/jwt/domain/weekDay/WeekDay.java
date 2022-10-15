@@ -1,7 +1,10 @@
 package com.example.jwt.domain.weekDay;
 
 import com.example.jwt.core.generic.ExtendedEntity;
+import com.example.jwt.core.generic.ExtendedEntityAudit;
 import com.example.jwt.domain.excercise.Exercise;
+import com.example.jwt.domain.trainingDayDate.TrainingDayDate;
+import com.example.jwt.domain.trainingSet.TrainingSet;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -10,15 +13,21 @@ import java.util.Set;
 
 @Entity
 @Table(name = "weekDay")
-public class WeekDay extends ExtendedEntity {
+public class WeekDay extends ExtendedEntityAudit {
 
     @Column(name = "name", nullable = true)
     private String name;
 
-    @Column(name = "trainingDayDate", nullable = true)
-    private Date trainingDayDate;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "weekDay", cascade = CascadeType.ALL )
+    private Set<TrainingSet> trainingSets;
+
+
+    @OneToMany(mappedBy = "weekDay", cascade = CascadeType.MERGE )
+    private Set<TrainingDayDate> trainingDayDates;
+
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinTable(
             name = "weekDay_exercise",
             joinColumns = @JoinColumn(name = "weekDay_id", referencedColumnName = "id"),
@@ -27,22 +36,16 @@ public class WeekDay extends ExtendedEntity {
 
 
 
-    public WeekDay() {
 
-    }
 
-    public WeekDay(String name, Date trainingDayDate, Set<Exercise> exercises) {
+    public WeekDay(String name, Set<TrainingSet> trainingSets, Set<TrainingDayDate> trainingDayDates, Set<Exercise> exercises) {
         this.name = name;
-        this.trainingDayDate = trainingDayDate;
+        this.trainingSets = trainingSets;
+        this.trainingDayDates = trainingDayDates;
         this.exercises = exercises;
     }
 
-    public Date getTrainingDayDate() {
-        return trainingDayDate;
-    }
-
-    public void setTrainingDayDate(Date trainingDayDate) {
-        this.trainingDayDate = trainingDayDate;
+    public WeekDay() {
     }
 
     public String getName() {
@@ -51,6 +54,22 @@ public class WeekDay extends ExtendedEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<TrainingSet> getTrainingSets() {
+        return trainingSets;
+    }
+
+    public void setTrainingSets(Set<TrainingSet> trainingSets) {
+        this.trainingSets = trainingSets;
+    }
+
+    public Set<TrainingDayDate> getTrainingDayDates() {
+        return trainingDayDates;
+    }
+
+    public void setTrainingDayDates(Set<TrainingDayDate> trainingDayDates) {
+        this.trainingDayDates = trainingDayDates;
     }
 
     public Set<Exercise> getExercises() {

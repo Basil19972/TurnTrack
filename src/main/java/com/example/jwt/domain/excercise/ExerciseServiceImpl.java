@@ -3,6 +3,7 @@ import com.example.jwt.core.generic.ExtendedServiceImpl;
 import com.example.jwt.domain.trainingSet.TrainingSet;
 import com.example.jwt.domain.trainingSet.TrainingSetService;
 import com.example.jwt.domain.user.UserService;
+import com.example.jwt.domain.weekDay.WeekDay;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,35 +35,11 @@ public class ExerciseServiceImpl extends ExtendedServiceImpl<Exercise> implement
 
 
 
-    @Override
-    public Exercise create(Exercise exercise,int setNumber) {
-
-        if(exerciseRepository.findByName(exercise.getName())!=null){
-            throw new RuntimeException("Your Exercise with this name already exists");
-        }
-
-
-        // Fill an Exercise whit amount off empty Trainings sets to Fill whit values later
-        Set<TrainingSet> trainingSets = new HashSet<>();
-        for(int i = 0; i< setNumber;i++){
-            trainingSets.add(new TrainingSet());
-        }
-        exercise.setTrainingSets(trainingSets);
-
-        super.save(exercise);
-
-        //Set ID to TrainingSet Table after the exercise is saved
-        exercise.getTrainingSets().forEach(trainingSet -> {
-            trainingSet.setExercise(exercise); trainingSetService.updateById(trainingSet.getId(),trainingSet);
-        });
-
-        return super.findById(exercise.getId());
-
-    }
 
     @Override
     public Exercise updateById(UUID id, Exercise exercisenew){
 
+        /*
         if (!super.existsById(id)) {
             throw new RuntimeException("Exercise with this ID do not exist!");
         }
@@ -78,7 +55,9 @@ public class ExerciseServiceImpl extends ExtendedServiceImpl<Exercise> implement
             exercisenew.getTrainingSets().forEach(trainingSet -> { trainingSet.setRepetitions(0);
                 trainingSet.setExercise(exerciseinDB); trainingSetService.updateById(trainingSet.getId(),trainingSet);
             });
-                return findByID(exerciseinDB.getId());
+
+         */
+                return null; // findByID(exerciseinDB.getId());
 
 
         }

@@ -3,8 +3,10 @@ package com.example.jwt.domain.trainingSet;
 import com.example.jwt.core.generic.ExtendedEntity;
 import com.example.jwt.core.generic.ExtendedEntityAudit;
 import com.example.jwt.domain.excercise.Exercise;
+import com.example.jwt.domain.weekDay.WeekDay;
 
 import javax.persistence.*;
+import java.util.Set;
 
 
 @Entity
@@ -18,20 +20,21 @@ public class TrainingSet extends ExtendedEntity {
     private int repetitions;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "excercise_id")
+    @JoinColumn(name = "weekDay_id")
+    private WeekDay weekDay;
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "exercise_id")
     private Exercise exercise;
 
-
-
-
-    public TrainingSet(int weight, int repetitions, Exercise exercise) {
+    public TrainingSet(int weight, int repetitions, WeekDay weekDay, Exercise exercise) {
         this.weight = weight;
         this.repetitions = repetitions;
+        this.weekDay = weekDay;
         this.exercise = exercise;
     }
 
     public TrainingSet() {
-
     }
 
     public int getWeight() {
@@ -50,12 +53,19 @@ public class TrainingSet extends ExtendedEntity {
         this.repetitions = repetitions;
     }
 
+    public WeekDay getWeekDay() {
+        return weekDay;
+    }
+
+    public void setWeekDay(WeekDay weekDay) {
+        this.weekDay = weekDay;
+    }
+
     public Exercise getExercise() {
         return exercise;
     }
 
     public void setExercise(Exercise exercise) {
         this.exercise = exercise;
-
     }
 }

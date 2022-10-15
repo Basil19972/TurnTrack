@@ -1,11 +1,8 @@
 package com.example.jwt.domain.trainingSet.dto;
 
 import com.example.jwt.core.generic.ExtendedDTO;
-import com.example.jwt.domain.trainingSet.TrainingSet;
-import lombok.Data;
-
-import javax.persistence.Column;
-import java.util.Set;
+import com.example.jwt.domain.excercise.Exercise;
+import com.example.jwt.domain.excercise.dto.ExerciseDTO;
 
 
 public class TrainingSetDTO extends ExtendedDTO {
@@ -14,9 +11,15 @@ public class TrainingSetDTO extends ExtendedDTO {
 
     private int repetitions;
 
-    public TrainingSetDTO(int weight, int repetitions) {
+    private ExerciseDTO exercise;
+
+    public TrainingSetDTO(int weight, int repetitions, ExerciseDTO exercise) {
         this.weight = weight;
         this.repetitions = repetitions;
+        this.exercise = exercise;
+    }
+
+    public TrainingSetDTO() {
     }
 
     public int getWeight() {
@@ -33,5 +36,13 @@ public class TrainingSetDTO extends ExtendedDTO {
 
     public void setRepetitions(int repetitions) {
         this.repetitions = repetitions;
+    }
+
+    public ExerciseDTO getExercise() {
+        return exercise;
+    }
+
+    public void setExercise(ExerciseDTO exercise) {
+        this.exercise = exercise;
     }
 }
