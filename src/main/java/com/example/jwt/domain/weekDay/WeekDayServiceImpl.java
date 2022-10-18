@@ -48,28 +48,6 @@ public class WeekDayServiceImpl extends ExtendedServiceImpl<WeekDay> implements 
             trainingDayDateService.save(trainingDayDate);
         });
 
-
-
-
-
-/*
-
-        //find trainingday without id use if date is same
-        List<Date> dates = new ArrayList<>();
-
-        for (int i = 0; i < )
-
-
-        weekDay.getTrainingDayDates().forEach(trainingDayDate -> dates.add(trainingDayDate.getDate()));
-
-        TrainingDayDate trainingDayDate1 = trainingDayDateService.findTrainingDateDate(dates.get(0));
-
-        //Set ID to TrainingSet Table after the weekday is saved
-        weekDay.getTrainingDayDates().forEach(trainingDayDate -> {
-            trainingDayDate.setWeekDay(weekDay); trainingDayDateService.updateById(trainingDayDate1.getId(),trainingDayDate);
-             });
-
- */
       return findById(weekDay.getId());
 
 

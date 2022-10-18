@@ -19,11 +19,11 @@ public class TrainingSet extends ExtendedEntity {
     @Column(name = "repetitions", nullable = false)
     private int repetitions;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "weekDay_id")
     private WeekDay weekDay;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "exercise_id")
     private Exercise exercise;
 

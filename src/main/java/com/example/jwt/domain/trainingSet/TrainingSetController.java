@@ -11,6 +11,9 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 import java.util.UUID;
 
 @Validated
@@ -35,6 +38,13 @@ public class TrainingSetController {
     @PreAuthorize("hasAuthority('EXERCISE_WRITE')")
     public ResponseEntity<TrainingSetDTO> updateById(@PathVariable UUID id, @Validated @RequestBody TrainingSetDTO trainingSet) {
         return new ResponseEntity<>(trainingSetMapper.toDTO(trainingSetService.UpdateTrainingSetByID(id,trainingSetMapper.fromDTO(trainingSet))), HttpStatus.OK);
+    }
+
+    @GetMapping("")
+    @PreAuthorize("hasAuthority('EXERCISE_READ')")
+    public ResponseEntity<List<TrainingSetDTO>> findAllFromCurrentDateByCurrentUser() {
+        List<TrainingSetDTO> trainingSetDTOS = trainingSetMapper.toDTOs(trainingSetService.findAllTrainingsSetFromCurrentUser());
+        return new ResponseEntity<>(trainingSetDTOS, HttpStatus.OK);
     }
 
 

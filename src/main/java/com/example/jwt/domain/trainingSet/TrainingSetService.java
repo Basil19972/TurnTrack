@@ -5,6 +5,8 @@ import com.example.jwt.domain.excercise.Exercise;
 import com.example.jwt.domain.weekDay.WeekDay;
 
 import javax.persistence.SecondaryTable;
+import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 
@@ -14,8 +16,11 @@ public interface TrainingSetService extends ExtendedService<TrainingSet> {
 
     TrainingSet UpdateTrainingSetByID(UUID id, TrainingSet trainingSet);
 
+    List<TrainingSet> findAllTrainingsSetFromCurrentUser();
 
 
 
 
-}
+
+
+    }

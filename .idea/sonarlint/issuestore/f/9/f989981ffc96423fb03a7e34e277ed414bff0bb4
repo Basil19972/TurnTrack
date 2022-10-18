@@ -1,0 +1,14 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(˜¸Ò€øÿÿÿÿ
+h
+java:S1128"MRemove this unused import 'com.example.jwt.domain.excercise.ExerciseService'.(ÍÂõ§þÿÿÿÿ
+c
+java:S1128"MRemove this unused import 'com.example.jwt.domain.excercise.dto.ExerciseDTO'.(çñö…
+f
+java:S1128"PRemove this unused import 'com.example.jwt.domain.excercise.dto.ExerciseMapper'.(èƒ’Ã
+C
+java:S1128"-Remove this unused import 'java.text.Format'.(¨Ô¬þ
+M
+java:S1128"7Remove this unused import 'java.text.SimpleDateFormat'.(ú¡ÙÛ
+O
+java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ

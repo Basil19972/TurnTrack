@@ -1,0 +1,15 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(è€“£þÿÿÿÿ
+u
+java:S4144L"ZUpdate this method so that its implementation is not identical to "getWeekDay" on line 40.(¥¤Å¿ûÿÿÿÿ
+p
+java:S4144P"ZUpdate this method so that its implementation is not identical to "setWeekDay" on line 44.(¡º“±
+h
+java:S1128"FRemove this unused import 'com.example.jwt.domain.excercise.Exercise'.(Ò–æ…ûÿÿÿÿ8õ¯±Æ½0
+Z
+java:S1128"=Remove this unused import 'com.example.jwt.domain.user.User'.(®Óæì8ö¯±Æ½0
+G
+java:S1128	"*Remove this unused import 'java.sql.Date'.(ÙÀ½Ê8ö¯±Æ½0
+L
+java:S1128
+"*Remove this unused import 'java.util.Set'.(ö²„¤þÿÿÿÿ8ö¯±Æ½0
