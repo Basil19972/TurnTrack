@@ -26,6 +26,12 @@ public class UserController {
         this.userMapper = userMapper;
     }
 
+    @GetMapping("/current")
+    @PreAuthorize("hasAuthority('USER_READ')")
+    public ResponseEntity<UserDTO> findCurrentuser() {
+        User user = userService.getCurrentUser();
+        return new ResponseEntity<>(userMapper.toDTO(user), HttpStatus.OK);
+    }
 
 
 

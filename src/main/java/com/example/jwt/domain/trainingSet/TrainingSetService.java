@@ -2,6 +2,7 @@ package com.example.jwt.domain.trainingSet;
 
 import com.example.jwt.core.generic.ExtendedService;
 import com.example.jwt.domain.excercise.Exercise;
+import com.example.jwt.domain.trainingSet.dto.StatDateRepWeightExname;
 import com.example.jwt.domain.weekDay.WeekDay;
 
 import javax.persistence.SecondaryTable;
@@ -17,6 +18,8 @@ public interface TrainingSetService extends ExtendedService<TrainingSet> {
     TrainingSet UpdateTrainingSetByID(UUID id, TrainingSet trainingSet);
 
     List<TrainingSet> findAllTrainingsSetFromCurrentUser();
+
+    List<StatDateRepWeightExname> getAllWeightRepsFromLastMonth();
 
 
 

@@ -2,6 +2,7 @@ package com.example.jwt.domain.trainingSet;
 
 
 import com.example.jwt.domain.excercise.dto.ExerciseDTO;
+import com.example.jwt.domain.trainingSet.dto.StatDateRepWeightExname;
 import com.example.jwt.domain.trainingSet.dto.TrainingSetDTO;
 import com.example.jwt.domain.trainingSet.dto.TrainingSetMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,13 @@ public class TrainingSetController {
     public ResponseEntity<List<TrainingSetDTO>> findAllFromCurrentDateByCurrentUser() {
         List<TrainingSetDTO> trainingSetDTOS = trainingSetMapper.toDTOs(trainingSetService.findAllTrainingsSetFromCurrentUser());
         return new ResponseEntity<>(trainingSetDTOS, HttpStatus.OK);
+    }
+
+
+    @GetMapping("/stat1")
+    @PreAuthorize("hasAuthority('EXERCISE_READ')")
+    public ResponseEntity<List<StatDateRepWeightExname>> findAllWeightRepsFromLastMonth() {
+        return new ResponseEntity<>(trainingSetService.getAllWeightRepsFromLastMonth(), HttpStatus.OK);
     }
 
 

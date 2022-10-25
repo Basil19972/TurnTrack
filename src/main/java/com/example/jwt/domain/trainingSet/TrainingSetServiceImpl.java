@@ -2,6 +2,7 @@ package com.example.jwt.domain.trainingSet;
 
 import com.example.jwt.core.generic.ExtendedServiceImpl;
 import com.example.jwt.domain.excercise.Exercise;
+import com.example.jwt.domain.trainingSet.dto.StatDateRepWeightExname;
 import com.example.jwt.domain.user.User;
 import com.example.jwt.domain.user.UserService;
 import com.example.jwt.domain.weekDay.WeekDay;
@@ -72,6 +73,12 @@ public class TrainingSetServiceImpl extends ExtendedServiceImpl<TrainingSet> imp
 
         System.out.println(user_UUID + currentDate.toString());
         return trainingSetRepository.getTrainingsSetFromCurrentUser(user_UUID,currentDate);
+    }
+
+    @Override
+    public List<StatDateRepWeightExname> getAllWeightRepsFromLastMonth() {
+        UUID user_UUID = userService.getCurrentUser().getId();
+        return (List<StatDateRepWeightExname>) trainingSetRepository.getWeightRepsFromLastMonth(user_UUID);
     }
 
 
