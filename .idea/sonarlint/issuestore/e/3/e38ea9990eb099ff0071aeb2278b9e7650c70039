@@ -1,0 +1,6 @@
+
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Åã¤†ÿÿÿÿÿ8›èÔ†Á0
+l	java:S117&"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôÒ8œèÔ†Á0
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ù»îì8èÔ†Á0
+Z
+java:S1128"=Remove this unused import 'com.example.jwt.domain.user.User'.(®Óæì8¢èÔ†Á0

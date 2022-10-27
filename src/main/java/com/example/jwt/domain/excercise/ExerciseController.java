@@ -58,5 +58,20 @@ public class ExerciseController {
         return new ResponseEntity<>(exerciseDTOS, HttpStatus.OK);
     }
 
+    @GetMapping("/byuser")
+    @PreAuthorize("hasAuthority('EXERCISE_READ')")
+    public ResponseEntity<List<ExerciseDTO>> findAllByUser() {
+        List<ExerciseDTO> exerciseDTOS = exerciseMapper.toDTOs(exerciseService.findAllByUser());
+        return new ResponseEntity<>(exerciseDTOS, HttpStatus.OK);
+    }
+
+
+    @DeleteMapping("/{id}")
+    @PreAuthorize("hasAuthority('EXERCISE_READ')")
+    public ResponseEntity<Void> deleteById(@PathVariable UUID id) {
+        exerciseService.deleteById(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
 
 }
