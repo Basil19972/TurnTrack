@@ -1,10 +1,0 @@
-
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¹úÿŒûÿÿÿÿ
-a
-java:S1128"FRemove this unused import 'com.example.jwt.domain.excercise.Exercise'.(Ò–æ…ûÿÿÿÿ
-n
-java:S1128"SRemove this unused import 'com.example.jwt.domain.trainingDayDate.TrainingDayDate'.(Õ¬Ì£ýÿÿÿÿ
-f
-java:S1128"KRemove this unused import 'com.example.jwt.domain.trainingSet.TrainingSet'.(áóÎßûÿÿÿÿ
-A
-java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü

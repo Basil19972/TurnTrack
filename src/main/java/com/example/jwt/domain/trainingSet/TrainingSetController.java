@@ -2,6 +2,7 @@ package com.example.jwt.domain.trainingSet;
 
 
 import com.example.jwt.domain.excercise.dto.ExerciseDTO;
+import com.example.jwt.domain.trainingSet.dto.DoExerciseTrainingsSetDTO;
 import com.example.jwt.domain.trainingSet.dto.StatDateRepWeightExname;
 import com.example.jwt.domain.trainingSet.dto.TrainingSetDTO;
 import com.example.jwt.domain.trainingSet.dto.TrainingSetMapper;
@@ -53,6 +54,14 @@ public class TrainingSetController {
     @PreAuthorize("hasAuthority('EXERCISE_READ')")
     public ResponseEntity<List<StatDateRepWeightExname>> findAllWeightRepsFromLastMonth() {
         return new ResponseEntity<>(trainingSetService.getAllWeightRepsFromLastMonth(), HttpStatus.OK);
+    }
+
+
+    @GetMapping("/start")
+    @PreAuthorize("hasAuthority('EXERCISE_READ')")
+    public ResponseEntity<List<DoExerciseTrainingsSetDTO>> findAllTrainingsSetsToDoExercses() {
+        List<DoExerciseTrainingsSetDTO> doExerciseTrainingsSetDTOS = trainingSetService.findAllTrainingsSetToDoExercises();
+        return new ResponseEntity<>(doExerciseTrainingsSetDTOS, HttpStatus.OK);
     }
 
 

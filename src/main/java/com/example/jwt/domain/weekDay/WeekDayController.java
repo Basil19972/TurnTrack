@@ -4,6 +4,7 @@ package com.example.jwt.domain.weekDay;
 import com.example.jwt.domain.excercise.ExerciseService;
 import com.example.jwt.domain.excercise.dto.ExerciseDTO;
 import com.example.jwt.domain.excercise.dto.ExerciseMapper;
+import com.example.jwt.domain.trainingSet.dto.TrainingSetDTO;
 import com.example.jwt.domain.weekDay.dto.WeekDayDTO;
 import com.example.jwt.domain.weekDay.dto.WeekDayMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +49,12 @@ public class WeekDayController {
     @PreAuthorize("hasAuthority('WEEKDAY_WRITE')")
     public ResponseEntity<WeekDayDTO> createExercise(@RequestBody WeekDayDTO weekDayDTO) {
         return new ResponseEntity<>(weekDayMapper.toDTO(weekDayService.create(weekDayMapper.fromDTO(weekDayDTO))), HttpStatus.CREATED);
+    }
+
+    @PutMapping("/{id}")
+    @PreAuthorize("hasAuthority('WEEKDAY_WRITE')")
+    public ResponseEntity<WeekDayDTO> updateByToDoneId(@PathVariable UUID id) {
+        return new ResponseEntity<>(weekDayMapper.toDTO(weekDayService.updateToDoneById(id)), HttpStatus.OK);
     }
 
 

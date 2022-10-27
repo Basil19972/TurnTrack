@@ -2,6 +2,7 @@ package com.example.jwt.domain.trainingSet;
 
 import com.example.jwt.core.generic.ExtendedServiceImpl;
 import com.example.jwt.domain.excercise.Exercise;
+import com.example.jwt.domain.trainingSet.dto.DoExerciseTrainingsSetDTO;
 import com.example.jwt.domain.trainingSet.dto.StatDateRepWeightExname;
 import com.example.jwt.domain.user.User;
 import com.example.jwt.domain.user.UserService;
@@ -10,9 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.*;
+
+import static java.time.LocalTime.now;
 
 @Service
 public class TrainingSetServiceImpl extends ExtendedServiceImpl<TrainingSet> implements TrainingSetService {
@@ -64,14 +68,10 @@ public class TrainingSetServiceImpl extends ExtendedServiceImpl<TrainingSet> imp
 
     public List<TrainingSet> findAllTrainingsSetFromCurrentUser(){
 
-        LocalDate currentLocalDate = LocalDate.now();
-        ZoneId systemTimeZone = ZoneId.systemDefault();
-        ZonedDateTime zonedDateTime = currentLocalDate.atStartOfDay(systemTimeZone);
-        Date currentDate = Date.from(zonedDateTime.toInstant());
+        LocalDateTime currentDate = LocalDateTime.now();
 
         UUID user_UUID = userService.getCurrentUser().getId();
 
-        System.out.println(user_UUID + currentDate.toString());
         return trainingSetRepository.getTrainingsSetFromCurrentUser(user_UUID,currentDate);
     }
 
@@ -79,6 +79,13 @@ public class TrainingSetServiceImpl extends ExtendedServiceImpl<TrainingSet> imp
     public List<StatDateRepWeightExname> getAllWeightRepsFromLastMonth() {
         UUID user_UUID = userService.getCurrentUser().getId();
         return (List<StatDateRepWeightExname>) trainingSetRepository.getWeightRepsFromLastMonth(user_UUID);
+    }
+
+
+    @Override
+    public List<DoExerciseTrainingsSetDTO> findAllTrainingsSetToDoExercises(){
+        UUID user_UUID = userService.getCurrentUser().getId();
+        return trainingSetRepository.getTrainingsetToDoExercises(user_UUID);
     }
 
 

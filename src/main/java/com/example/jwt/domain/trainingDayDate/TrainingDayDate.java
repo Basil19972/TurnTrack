@@ -5,6 +5,7 @@ import com.example.jwt.domain.excercise.Exercise;
 import com.example.jwt.domain.weekDay.WeekDay;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -12,13 +13,13 @@ import java.util.Date;
 public class TrainingDayDate extends ExtendedEntityAudit {
 
     @Column(name = "date", nullable = false)
-    private Date date;
+    private LocalDateTime date;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "weekDay_id")
     private WeekDay weekDay;
 
-    public TrainingDayDate(Date date, WeekDay weekDay) {
+    public TrainingDayDate(LocalDateTime date, WeekDay weekDay) {
         this.date = date;
         this.weekDay = weekDay;
     }
@@ -26,11 +27,11 @@ public class TrainingDayDate extends ExtendedEntityAudit {
     public TrainingDayDate() {
     }
 
-    public Date getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 

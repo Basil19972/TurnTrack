@@ -1,14 +1,0 @@
-
-Q	java:S125/"<This block of commented-out lines of code should be removed.(È×Ñş
-V	java:S125@"<This block of commented-out lines of code should be removed.(öÎÎıÿÿÿÿÿ
-f
-java:S1128"KRemove this unused import 'com.example.jwt.domain.trainingSet.TrainingSet'.(áóÎßûÿÿÿÿ
-Y
-java:S1128"CRemove this unused import 'com.example.jwt.domain.weekDay.WeekDay'.(…ÈÑ·
-C
-java:S1128
-".Remove this unused import 'java.util.HashSet'.(Ê‚êX
-E
-java:S1128"*Remove this unused import 'java.util.Set'.(ö²„¤şÿÿÿÿ
-Q
-java:S1068"6Remove this unused "trainingSetService" private field.(ìéøóûÿÿÿÿ

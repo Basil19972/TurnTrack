@@ -15,8 +15,14 @@ import java.util.Set;
 @Table(name = "weekDay")
 public class WeekDay extends ExtendedEntityAudit {
 
-    @Column(name = "name", nullable = true)
-    private String name;
+    @Column(name = "dayPlanname", nullable = false)
+    private String dayPlanname;
+
+    @Column(name = "trainingDone", nullable = true)
+    private Boolean trainingDone;
+
+    @Column(name = "dayName", nullable = true)
+    private String dayName;
 
 
     @OneToMany(mappedBy = "weekDay", cascade = CascadeType.ALL )
@@ -34,12 +40,10 @@ public class WeekDay extends ExtendedEntityAudit {
             inverseJoinColumns = @JoinColumn(name = "exercise_id", referencedColumnName = "id")
     )    private Set<Exercise> exercises;
 
-
-
-
-
-    public WeekDay(String name, Set<TrainingSet> trainingSets, Set<TrainingDayDate> trainingDayDates, Set<Exercise> exercises) {
-        this.name = name;
+    public WeekDay(String dayPlanname, Boolean trainingDone, String dayName, Set<TrainingSet> trainingSets, Set<TrainingDayDate> trainingDayDates, Set<Exercise> exercises) {
+        this.dayPlanname = dayPlanname;
+        this.trainingDone = trainingDone;
+        this.dayName = dayName;
         this.trainingSets = trainingSets;
         this.trainingDayDates = trainingDayDates;
         this.exercises = exercises;
@@ -48,12 +52,28 @@ public class WeekDay extends ExtendedEntityAudit {
     public WeekDay() {
     }
 
-    public String getName() {
-        return name;
+    public String getDayPlanname() {
+        return dayPlanname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDayPlanname(String dayPlanname) {
+        this.dayPlanname = dayPlanname;
+    }
+
+    public Boolean getTrainingDone() {
+        return trainingDone;
+    }
+
+    public void setTrainingDone(Boolean trainingDone) {
+        this.trainingDone = trainingDone;
+    }
+
+    public String getDayName() {
+        return dayName;
+    }
+
+    public void setDayName(String dayName) {
+        this.dayName = dayName;
     }
 
     public Set<TrainingSet> getTrainingSets() {
