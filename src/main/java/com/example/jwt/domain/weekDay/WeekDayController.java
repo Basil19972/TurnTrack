@@ -38,7 +38,7 @@ public class WeekDayController {
 
     @GetMapping("")
     @PreAuthorize("hasAuthority('WEEKDAY_READ')")
-    public ResponseEntity<List<WeekDayDTO>> findAll() {
+    public ResponseEntity<List<WeekDayDTO>> findAllBy() {
 
 
         List<WeekDayDTO> weekDayDTOS = weekDayMapper.toDTOs(weekDayService.findAll());
@@ -51,10 +51,10 @@ public class WeekDayController {
         return new ResponseEntity<>(weekDayMapper.toDTO(weekDayService.create(weekDayMapper.fromDTO(weekDayDTO))), HttpStatus.CREATED);
     }
 
-    @PutMapping("/{id}")
+    @GetMapping("/user")
     @PreAuthorize("hasAuthority('WEEKDAY_WRITE')")
-    public ResponseEntity<WeekDayDTO> updateByToDoneId(@PathVariable UUID id) {
-        return new ResponseEntity<>(weekDayMapper.toDTO(weekDayService.updateToDoneById(id)), HttpStatus.OK);
+    public ResponseEntity<List<WeekDayDTO>> updateByToDoneId() {
+        return new ResponseEntity<>(weekDayMapper.toDTOs(weekDayService.findAllByUserID()), HttpStatus.OK);
     }
 
 

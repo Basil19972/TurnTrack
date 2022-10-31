@@ -5,17 +5,14 @@ import com.example.jwt.domain.excercise.ExerciseService;
 import com.example.jwt.domain.trainingDayDate.TrainingDayDate;
 import com.example.jwt.domain.trainingDayDate.TrainingDayDateService;
 import com.example.jwt.domain.trainingSet.TrainingSetService;
+import com.example.jwt.domain.user.User;
 import com.example.jwt.domain.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.text.Format;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -25,14 +22,16 @@ public class WeekDayServiceImpl extends ExtendedServiceImpl<WeekDay> implements 
     private final TrainingSetService trainingSetService;
     private final ExerciseService exerciseService;
     private final UserService userService;
+    private final WeekDayRepository weekDayRepository;
 
     @Autowired
-    protected WeekDayServiceImpl(WeekDayRepository weekDayRepository, TrainingDayDateService trainingDayDateService, TrainingSetService trainingSetService, ExerciseService exerciseService, UserService userService) {
+    protected WeekDayServiceImpl(WeekDayRepository weekDayRepository, TrainingDayDateService trainingDayDateService, TrainingSetService trainingSetService, ExerciseService exerciseService, UserService userService, WeekDayRepository weekDayRepository1) {
         super(weekDayRepository);
         this.trainingDayDateService = trainingDayDateService;
         this.trainingSetService = trainingSetService;
         this.exerciseService = exerciseService;
         this.userService = userService;
+        this.weekDayRepository = weekDayRepository1;
     }
 
 
@@ -81,6 +80,12 @@ public class WeekDayServiceImpl extends ExtendedServiceImpl<WeekDay> implements 
         save(currentWeekday);
 
         return currentWeekday;
+    }
+
+    @Override
+    public List<WeekDay> findAllByUserID() {
+
+        return weekDayRepository.getAllByCreatedBy(userService.getCurrentUser());
     }
 
 

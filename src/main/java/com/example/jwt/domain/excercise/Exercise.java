@@ -14,7 +14,7 @@ import java.util.Set;
 public class Exercise extends ExtendedEntityAudit {
 
 
-    @Column(name = "name", nullable = true)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Column(name = "amountOfSets", nullable = true)
