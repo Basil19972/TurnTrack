@@ -2,11 +2,11 @@ name: Deploy to Heroku Staging
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "development" ]
 
 
 jobs:
-  system-testing:
+  push-to-Heroku:
     runs-on: ubuntu-latest
 
     steps:
