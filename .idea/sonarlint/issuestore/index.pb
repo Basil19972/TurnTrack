@@ -74,8 +74,6 @@ u
 Esrc/main/java/com/example/jwt/domain/user/dto/NameSumDisxountDTO.java,1/4/14dc2a31464d8335fae11da5e1ab4e254e51373a
 }
 Msrc/main/java/com/example/jwt/domain/user/dto/UserIdNameAndPriceSpendDTO.java,8/5/85ca89694ba88da051b3da525708802fac9e2fde
-<
-build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
 r
 Bsrc/main/java/com/example/jwt/core/generic/ExtendedRepository.java,6/b/6bd2015ee6da19601467c8e1d860cd8d86458f3f
 ˆ
@@ -216,3 +214,5 @@ l
 <src/main/java/com/example/jwt/domain/excercise/Exercise.java,9/c/9c530d895c64839fc250ffa1cf5796335b63060b
 v
 Fsrc/main/java/com/example/jwt/domain/excercise/ExerciseController.java,0/c/0c82d2ca4515f02454ff08574ff06f8ab744638d
+<
+build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
