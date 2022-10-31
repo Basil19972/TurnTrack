@@ -15,5 +15,5 @@ jobs:
         with:
           branch: release
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "turn-track"
+          heroku_app_name: "turn-track-staging"
           heroku_email: "turn.track@protonmail.com"
