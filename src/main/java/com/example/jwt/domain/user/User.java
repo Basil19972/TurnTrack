@@ -12,7 +12,7 @@ import java.util.UUID;
 @Table(name = "users")
 public class User extends ExtendedEntityAudit {
 
-
+//HELLO
     @Column(name = "first_name")
     private String firstName;
 

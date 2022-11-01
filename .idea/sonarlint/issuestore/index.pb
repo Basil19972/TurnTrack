@@ -136,8 +136,6 @@ B
 docker-compose.yml,3/5/35b8c13cf2eb2a194eada000eb310d65aed53b2a
 m
 =src/main/java/com/example/jwt/domain/user/UserRepository.java,6/2/6215e2ef6faf6e55e3c4a2a82fb72d092271a0e2
-c
-3src/main/java/com/example/jwt/domain/user/User.java,d/6/d60733a6debbb5040c7f7a070481dcb334583398
 n
 >src/main/java/com/example/jwt/domain/user/UserServiceImpl.java,9/5/9515fcbeb274278b95e231d08450acc582f397e7
 {
