@@ -37,7 +37,7 @@ public class WeekDayController {
 
 
     @GetMapping("")
-    @PreAuthorize("hasAuthority('WEEKDAY_READ')")
+    @PreAuthorize("hasAuthority('WEEKDAY_READ_ALL')")
     public ResponseEntity<List<WeekDayDTO>> findAllBy() {
 
 
@@ -53,7 +53,7 @@ public class WeekDayController {
 
     @GetMapping("/user")
     @PreAuthorize("hasAuthority('WEEKDAY_WRITE')")
-    public ResponseEntity<List<WeekDayDTO>> updateByToDoneId() {
+    public ResponseEntity<List<WeekDayDTO>> findAllByUser() {
         return new ResponseEntity<>(weekDayMapper.toDTOs(weekDayService.findAllByUserID()), HttpStatus.OK);
     }
 

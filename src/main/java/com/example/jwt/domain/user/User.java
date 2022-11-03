@@ -4,6 +4,7 @@ import com.example.jwt.core.generic.ExtendedEntityAudit;
 import com.example.jwt.domain.role.Role;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
@@ -18,6 +19,7 @@ public class User extends ExtendedEntityAudit {
 
     @Column(name = "last_name")
     private String lastName;
+
 
     @Column(name = "age", nullable = false)
     private int age;
