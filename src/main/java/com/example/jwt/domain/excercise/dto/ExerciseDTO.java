@@ -1,23 +1,38 @@
-package com.example.jwt.domain.excercise.dto;
+package com.example.jwt.domain.excercise;
 
-import com.example.jwt.core.generic.ExtendedDTO;
-import com.example.jwt.domain.trainingSet.dto.TrainingSetDTO;
+import com.example.jwt.core.generic.ExtendedEntityAudit;
+import com.example.jwt.domain.weekDay.WeekDay;
+import com.example.jwt.domain.weekPlan.WeekPlan;
+import com.example.jwt.domain.trainingSet.TrainingSet;
 
+import javax.persistence.*;
+import javax.validation.constraints.Min;
 import java.util.Set;
 
-public class ExerciseDTO extends ExtendedDTO {
+@Entity
+@Table(name = "excercise")
+public class Exercise extends ExtendedEntityAudit {
 
+
+    @Column(name = "name", nullable = false)
     private String name;
 
+    @Column(name = "amountOfSets", nullable = true)
     private int amountOfSets;
 
+    @OneToMany(mappedBy = "exercise", cascade = CascadeType.ALL )
+    private Set<TrainingSet> trainingSets;
 
-    public ExerciseDTO(String name, int amountOfSets) {
+
+
+
+    public Exercise(String name, int amountOfSets, Set<TrainingSet> trainingSets) {
         this.name = name;
         this.amountOfSets = amountOfSets;
+        this.trainingSets = trainingSets;
     }
 
-    public ExerciseDTO() {
+    public Exercise() {
     }
 
     public String getName() {
@@ -34,5 +49,13 @@ public class ExerciseDTO extends ExtendedDTO {
 
     public void setAmountOfSets(int amountOfSets) {
         this.amountOfSets = amountOfSets;
+    }
+
+    public Set<TrainingSet> getTrainingSets() {
+        return trainingSets;
+    }
+
+    public void setTrainingSets(Set<TrainingSet> trainingSets) {
+        this.trainingSets = trainingSets;
     }
 }

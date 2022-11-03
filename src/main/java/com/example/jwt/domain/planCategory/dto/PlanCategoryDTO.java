@@ -1,17 +1,22 @@
-package com.example.jwt.domain.planCategory.dto;
+package com.example.jwt.domain.planCategory;
 
-import com.example.jwt.core.generic.ExtendedDTO;
-import com.example.jwt.domain.trainingSet.dto.TrainingSetDTO;
+import com.example.jwt.core.generic.ExtendedEntity;
 import lombok.Data;
 
-import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-public class PlanCategoryDTO extends ExtendedDTO {
+@Entity
+@Table(name = "PlanCategory")
+public class PlanCategory extends ExtendedEntity {
 
     private String name;
 
-    public PlanCategoryDTO(String name) {
+    public PlanCategory(String name) {
         this.name = name;
+    }
+
+    public PlanCategory() {
     }
 
     public String getName() {
@@ -20,8 +25,5 @@ public class PlanCategoryDTO extends ExtendedDTO {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public PlanCategoryDTO() {
     }
 }
