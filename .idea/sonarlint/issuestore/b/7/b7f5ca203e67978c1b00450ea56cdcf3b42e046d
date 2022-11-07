@@ -1,8 +1,8 @@
 
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(°³º­ûÿÿÿÿ
-o
-java:S1128"RRemove this unused import 'com.example.jwt.domain.trainingSet.dto.TrainingSetDTO'.(Œµ¸8ğ¼†ú¹0
-J
-java:S1128"(Remove this unused import 'lombok.Data'.(÷í«ÿÿÿÿÿ8ğ¼†ú¹0
-L
-java:S1128"*Remove this unused import 'java.util.Set'.(ö²„¤şÿÿÿÿ8ğ¼†ú¹0
+j
+java:S1128"HRemove this unused import 'com.example.jwt.core.generic.ExtendedEntity'.(ğ¤Â›ùÿÿÿÿ8·Á’üÃ0
+W
+java:S1128"5Remove this unused import 'javax.persistence.Entity'.(úƒßıûÿÿÿÿ8¸Á’üÃ0
+V
+java:S1128"4Remove this unused import 'javax.persistence.Table'.(˜øŒ“øÿÿÿÿ8¸Á’üÃ0

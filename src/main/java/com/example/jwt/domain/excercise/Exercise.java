@@ -23,6 +23,9 @@ public class Exercise extends ExtendedEntityAudit {
     @OneToMany(mappedBy = "exercise", cascade = CascadeType.ALL )
     private Set<TrainingSet> trainingSets;
 
+
+
+
     public Exercise(String name, int amountOfSets, Set<TrainingSet> trainingSets) {
         this.name = name;
         this.amountOfSets = amountOfSets;

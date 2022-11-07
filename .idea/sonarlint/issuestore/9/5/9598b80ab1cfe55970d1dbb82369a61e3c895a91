@@ -1,0 +1,17 @@
+
+f	java:S117H"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²¾¸ó
+f	java:S117O"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²¾¸ó
+f	java:S117V"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²¾¸ó
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ù»îì
+=
+java:S1905P"'Remove this unnecessary cast to "List".(ÿÿ´¹
+B
+java:S1602^",Remove useless curly braces around statement(âêİ‰
+a
+java:S1612^"KReplace this lambda with method reference 'ExtendedServiceImpl.this::save'.(âêİ‰
+o
+java:S1128"MRemove this unused import 'com.example.jwt.domain.excercise.ExerciseService'.(ÍÂõ§şÿÿÿÿ8ìÃòÄ0
+q
+java:S1128"TRemove this unused import 'com.example.jwt.domain.trainingDone.TrainingDoneService'.(‘Û©Ù8õ§ÀòÄ0
+V
+java:S1128"4Remove this unused import 'java.time.LocalTime.now'.(µ´Á€ùÿÿÿÿ8ÛÀòÄ0

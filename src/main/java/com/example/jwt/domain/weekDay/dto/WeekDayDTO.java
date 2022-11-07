@@ -22,6 +22,11 @@ public class WeekDayDTO extends ExtendedDTO {
     private Set<ExerciseDTO> exercises;
 
 
+
+
+
+
+
     public WeekDayDTO(String dayPlanname, String dayName, Set<ExerciseDTO> exercises) {
         this.dayPlanname = dayPlanname;
         this.dayName = dayName;

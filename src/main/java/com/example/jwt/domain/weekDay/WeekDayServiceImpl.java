@@ -38,7 +38,6 @@ public class WeekDayServiceImpl extends ExtendedServiceImpl<WeekDay> implements 
     @Override
     public WeekDay create(WeekDay weekDay) {
 
-        weekDay.setTrainingDone(false);
         save(weekDay);
 
         ArrayList<Exercise> exercises = new ArrayList<>();
@@ -68,15 +67,14 @@ public class WeekDayServiceImpl extends ExtendedServiceImpl<WeekDay> implements 
 
 
         //Save all the TrainingDayDate Entities nd add the Weekday id to them
-        TrainingDayDate trainingDayDate = new TrainingDayDate();
-        trainingDayDate.setWeekDay(currentWeekday);
-        trainingDayDate.setDate(LocalDateTime.now());
-        trainingDayDateService.save(trainingDayDate);
+       // TrainingDayDate trainingDayDate = new TrainingDayDate();
+       // trainingDayDate.setWeekDay(currentWeekday);
+      //  trainingDayDate.setDate(LocalDateTime.now());
+      //  trainingDayDateService.save(trainingDayDate);
 
 
 
 
-        currentWeekday.setTrainingDone(true);
         save(currentWeekday);
 
         return currentWeekday;

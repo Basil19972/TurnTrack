@@ -2,10 +2,7 @@ package com.example.jwt.domain.trainingSet;
 
 
 import com.example.jwt.domain.excercise.dto.ExerciseDTO;
-import com.example.jwt.domain.trainingSet.dto.DoExerciseTrainingsSetDTO;
-import com.example.jwt.domain.trainingSet.dto.StatDateRepWeightExname;
-import com.example.jwt.domain.trainingSet.dto.TrainingSetDTO;
-import com.example.jwt.domain.trainingSet.dto.TrainingSetMapper;
+import com.example.jwt.domain.trainingSet.dto.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,6 +31,12 @@ public class TrainingSetController {
     }
 
 
+    @PostMapping("")
+    @PreAuthorize("hasAuthority('EXERCISE_WRITE')")
+    public ResponseEntity<List<TrainingSetDTO>> createNewWorkout(@RequestBody List<TrainingSetDTO> trainingSetDTOS) {
+        return new ResponseEntity<>(trainingSetMapper.toDTOs(trainingSetService.createNewWorkout(trainingSetMapper.fromDTOs(trainingSetDTOS))), HttpStatus.CREATED);
+    }
+    3.
 
 
     @PutMapping("/{id}")

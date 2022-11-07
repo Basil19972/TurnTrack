@@ -1,0 +1,18 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ªÃ­‹
+v
+java:S1128"TRemove this unused import 'com.example.jwt.domain.planCategory.PlanCategoryService'.(«ìÔÒùÿÿÿÿ8³¹ŒüÃ0
+t
+java:S1128"WRemove this unused import 'com.example.jwt.domain.planCategory.dto.PlanCategoryMapper'.(ŸÅ€§8´¹ŒüÃ0
+u
+java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡¸Îùÿÿÿÿ8´¹ŒüÃ0
+[
+java:S1128"@Remove this unused import 'org.springframework.http.HttpStatus'.(íŸ¤Šúÿÿÿÿ
+_
+java:S1128"DRemove this unused import 'org.springframework.http.ResponseEntity'.(¶¯ø¦úÿÿÿÿ
+p
+java:S1128	"URemove this unused import 'org.springframework.security.access.prepost.PreAuthorize'.(ˆ†×ùÿÿÿÿ
+e
+java:S1128"ORemove this unused import 'org.springframework.web.bind.annotation.GetMapping'.(‡¡‰Ø
+F
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ

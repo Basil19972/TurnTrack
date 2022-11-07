@@ -1,22 +1,20 @@
-package com.example.jwt.domain.planCategory;
+package com.example.jwt.domain.planCategory.dto;
 
+import com.example.jwt.core.generic.ExtendedDTO;
 import com.example.jwt.core.generic.ExtendedEntity;
-import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "PlanCategory")
-public class PlanCategory extends ExtendedEntity {
+public class PlanCategoryDTO extends ExtendedDTO {
 
     private String name;
 
-    public PlanCategory(String name) {
+    public PlanCategoryDTO(String name) {
         this.name = name;
     }
 
-    public PlanCategory() {
+    public PlanCategoryDTO() {
     }
 
     public String getName() {

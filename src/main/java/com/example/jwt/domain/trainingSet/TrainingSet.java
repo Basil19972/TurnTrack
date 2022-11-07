@@ -1,8 +1,8 @@
 package com.example.jwt.domain.trainingSet;
 
 import com.example.jwt.core.generic.ExtendedEntity;
-import com.example.jwt.core.generic.ExtendedEntityAudit;
 import com.example.jwt.domain.excercise.Exercise;
+import com.example.jwt.domain.trainingDone.TrainingDone;
 import com.example.jwt.domain.weekDay.WeekDay;
 
 import javax.persistence.*;
@@ -27,14 +27,27 @@ public class TrainingSet extends ExtendedEntity {
     @JoinColumn(name = "exercise_id")
     private Exercise exercise;
 
-    public TrainingSet(int weight, int repetitions, WeekDay weekDay, Exercise exercise) {
+
+    @OneToMany(mappedBy = "trainingSet", cascade = CascadeType.ALL )
+    private Set<TrainingDone> trainingDones;
+
+    public TrainingSet(int weight, int repetitions, WeekDay weekDay, Exercise exercise, Set<TrainingDone> trainingDones) {
         this.weight = weight;
         this.repetitions = repetitions;
         this.weekDay = weekDay;
         this.exercise = exercise;
+        this.trainingDones = trainingDones;
     }
 
     public TrainingSet() {
+    }
+
+    public Set<TrainingDone> getTrainingDones() {
+        return trainingDones;
+    }
+
+    public void setTrainingDones(Set<TrainingDone> trainingDones) {
+        this.trainingDones = trainingDones;
     }
 
     public int getWeight() {

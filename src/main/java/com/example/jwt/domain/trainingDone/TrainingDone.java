@@ -1,37 +1,27 @@
-package com.example.jwt.domain.authority;
+package com.example.jwt.domain.trainingDone;
 
 import com.example.jwt.core.generic.ExtendedEntity;
-import com.example.jwt.domain.role.Role;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.example.jwt.domain.excercise.Exercise;
+import com.example.jwt.domain.trainingDayDate.TrainingDayDate;
+import com.example.jwt.domain.trainingSet.TrainingSet;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
-import java.util.HashSet;
-import java.util.Set;
+import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
-@Table(name = "authorities")
-public class Authority extends ExtendedEntity {
+@Table(name = "trainingDone")
+public class TrainingDone extends ExtendedEntity {
 
-    @Column(name = "name", nullable = false, unique = true)
-    private String name;
+    Boolean trainingDone;
 
-    public Authority() {
-    }
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "trainingSet_id")
+    private TrainingSet trainingSet;
 
-    public Authority(UUID id, String name) {
-        super(id);
-        this.name = name;
-    }
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "trainingDayDate_id")
+    private TrainingDayDate trainingDayDate;
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+
 }
