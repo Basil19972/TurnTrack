@@ -22,6 +22,37 @@ public class TrainingDone extends ExtendedEntity {
     @JoinColumn(name = "trainingDayDate_id")
     private TrainingDayDate trainingDayDate;
 
+    public TrainingDone(Boolean trainingDone, TrainingSet trainingSet, TrainingDayDate trainingDayDate) {
+        this.trainingDone = trainingDone;
+        this.trainingSet = trainingSet;
+        this.trainingDayDate = trainingDayDate;
+    }
 
+    public TrainingDone() {
 
+    }
+
+    public Boolean getTrainingDone() {
+        return trainingDone;
+    }
+
+    public void setTrainingDone(Boolean trainingDone) {
+        this.trainingDone = trainingDone;
+    }
+
+    public TrainingSet getTrainingSet() {
+        return trainingSet;
+    }
+
+    public void setTrainingSet(TrainingSet trainingSet) {
+        this.trainingSet = trainingSet;
+    }
+
+    public TrainingDayDate getTrainingDayDate() {
+        return trainingDayDate;
+    }
+
+    public void setTrainingDayDate(TrainingDayDate trainingDayDate) {
+        this.trainingDayDate = trainingDayDate;
+    }
 }

@@ -1,0 +1,20 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(˜¸Ò€øÿÿÿÿ
+V	java:S1254"<This block of commented-out lines of code should be removed.(Á½‚ùÿÿÿÿ
+Q	java:S125>"<This block of commented-out lines of code should be removed.(ç©Žé
+h
+java:S1128"FRemove this unused import 'com.example.jwt.domain.excercise.Exercise'.(Ò–æ…ûÿÿÿÿ8Œº‘‹Å0
+u
+java:S1128"SRemove this unused import 'com.example.jwt.domain.trainingDayDate.TrainingDayDate'.(Õ¬Ì£ýÿÿÿÿ8Œº‘‹Å0
+Z
+java:S1128"=Remove this unused import 'com.example.jwt.domain.user.User'.(®Óæì8º‘‹Å0
+V
+java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ8º‘‹Å0
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8º‘‹Å0
+P
+java:S1068":Remove this unused "trainingDayDateService" private field.(åÈ¨Á
+X
+java:S1068"6Remove this unused "trainingSetService" private field.(ìéøóûÿÿÿÿ8“™ÿ‰Å0
+P
+java:S1068"3Remove this unused "exerciseService" private field.(ì¬ÌÔ8Ïå¨ŠÅ0

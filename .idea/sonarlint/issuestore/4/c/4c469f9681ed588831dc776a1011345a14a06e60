@@ -1,0 +1,8 @@
+
+8
+java:S1700"Rename field "trainingDone"(ÂÀµ¬8êâüÃ0
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ªÃ­‹8ä›üûÃ0
+h
+java:S1128"FRemove this unused import 'com.example.jwt.domain.excercise.Exercise'.(Ò–æ…ûÿÿÿÿ8´–°üÃ0
+M
+java:S1128	"+Remove this unused import 'java.util.UUID'.(ÀãÄ£úÿÿÿÿ8µ–°üÃ0

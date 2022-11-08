@@ -13,9 +13,7 @@ import java.util.UUID;
 
 public interface TrainingSetService extends ExtendedService<TrainingSet> {
 
-    Set<TrainingSet> createDefaultTrainingSet(WeekDay weekday, int amountOffSets,Exercise exercise);
 
-    TrainingSet UpdateTrainingSetByID(UUID id, TrainingSet trainingSet);
 
     List<TrainingSet> findAllTrainingsSetFromCurrentUser();
 

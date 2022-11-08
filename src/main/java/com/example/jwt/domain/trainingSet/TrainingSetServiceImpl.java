@@ -31,39 +31,10 @@ public class TrainingSetServiceImpl extends ExtendedServiceImpl<TrainingSet> imp
         this.userService = userService;
     }
 
-    @Override
-    public Set<TrainingSet> createDefaultTrainingSet(WeekDay weekday, int amountOffSets, Exercise exercise) {
 
-        //Creat Empty Objects
-        Set<TrainingSet> trainingSets = new HashSet<>();
-        for(int i = 0; i< amountOffSets;i++){
-            trainingSets.add(new TrainingSet());
-        }
-        //Set Weekday UUID and Save them
-        trainingSets.forEach(trainingSet -> {trainingSet.setWeekDay(weekday);
-            trainingSet.setExercise(exercise);
-            save(trainingSet);});
 
-            return trainingSets ;
-        }
 
-    @Override
-    public TrainingSet UpdateTrainingSetByID(UUID id, TrainingSet trainingSetnew) {
 
-        if (existsById(id)) {
-            TrainingSet trainingSetCurrent = findById(id);
-
-            trainingSetnew.setId(id);
-            trainingSetnew.setExercise(trainingSetCurrent.getExercise());
-            trainingSetnew.setWeekDay(trainingSetCurrent.getWeekDay());
-
-            return save(trainingSetnew);
-        } else {
-            throw new NoSuchElementException(String.format("Entity with ID '%s' could not be found", id));
-        }
-    }
-
-    //funktionier noch ncht ganz
 
     public List<TrainingSet> findAllTrainingsSetFromCurrentUser(){
 
@@ -92,6 +63,8 @@ public class TrainingSetServiceImpl extends ExtendedServiceImpl<TrainingSet> imp
 
 
         trainingSet.forEach(trainingSet1 -> {
+
+            System.out.println("-------->" +trainingSet1.getWeekDays());
             save(trainingSet1);
 
         });

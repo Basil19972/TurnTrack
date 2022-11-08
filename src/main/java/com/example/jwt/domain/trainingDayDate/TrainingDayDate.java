@@ -1,5 +1,6 @@
 package com.example.jwt.domain.trainingDayDate;
 
+import com.example.jwt.core.generic.ExtendedEntity;
 import com.example.jwt.core.generic.ExtendedEntityAudit;
 import com.example.jwt.domain.excercise.Exercise;
 import com.example.jwt.domain.trainingDone.TrainingDone;
@@ -12,7 +13,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "trainingDayDate")
-public class TrainingDayDate extends ExtendedEntityAudit {
+public class TrainingDayDate extends ExtendedEntity {
 
     @Column(name = "date", nullable = false)
     private LocalDateTime date;

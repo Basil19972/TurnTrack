@@ -34,16 +34,14 @@ public class TrainingSetController {
     @PostMapping("")
     @PreAuthorize("hasAuthority('EXERCISE_WRITE')")
     public ResponseEntity<List<TrainingSetDTO>> createNewWorkout(@RequestBody List<TrainingSetDTO> trainingSetDTOS) {
+
+        trainingSetDTOS.forEach(trainingSetDTO -> System.out.println(trainingSetDTO.getWeekDays()));
         return new ResponseEntity<>(trainingSetMapper.toDTOs(trainingSetService.createNewWorkout(trainingSetMapper.fromDTOs(trainingSetDTOS))), HttpStatus.CREATED);
     }
-    3.
 
 
-    @PutMapping("/{id}")
-    @PreAuthorize("hasAuthority('EXERCISE_WRITE')")
-    public ResponseEntity<TrainingSetDTO> updateById(@PathVariable UUID id, @Validated @RequestBody TrainingSetDTO trainingSet) {
-        return new ResponseEntity<>(trainingSetMapper.toDTO(trainingSetService.UpdateTrainingSetByID(id,trainingSetMapper.fromDTO(trainingSet))), HttpStatus.OK);
-    }
+
+
 
     @GetMapping("")
     @PreAuthorize("hasAuthority('EXERCISE_READ')")

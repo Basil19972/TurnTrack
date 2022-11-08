@@ -4,31 +4,24 @@ import com.example.jwt.core.generic.ExtendedDTO;
 import com.example.jwt.domain.excercise.dto.ExerciseDTO;
 import com.example.jwt.domain.weekDay.dto.WeekDayDTO;
 
+import java.util.Set;
+
 
 public class TrainingSetDTO extends ExtendedDTO {
 
     private int weight;
     private int repetitions;
-    private WeekDayDTO weekDay;
+    private Set<WeekDayDTO> weekDays;
     private ExerciseDTO exercise;
 
 
-    public TrainingSetDTO(int weight, int repetitions, WeekDayDTO weekDay, ExerciseDTO exercise) {
+
+
+    public TrainingSetDTO(int weight, int repetitions, Set<WeekDayDTO> weekDays, ExerciseDTO exercise) {
         this.weight = weight;
         this.repetitions = repetitions;
-        this.weekDay = weekDay;
+        this.weekDays = weekDays;
         this.exercise = exercise;
-    }
-
-    public TrainingSetDTO() {
-    }
-
-    public WeekDayDTO getWeekDay() {
-        return weekDay;
-    }
-
-    public void setWeekDay(WeekDayDTO weekDay) {
-        this.weekDay = weekDay;
     }
 
     public int getWeight() {
@@ -47,6 +40,14 @@ public class TrainingSetDTO extends ExtendedDTO {
         this.repetitions = repetitions;
     }
 
+    public Set<WeekDayDTO> getWeekDays() {
+        return weekDays;
+    }
+
+    public void setWeekDays(Set<WeekDayDTO> weekDays) {
+        this.weekDays = weekDays;
+    }
+
     public ExerciseDTO getExercise() {
         return exercise;
     }
@@ -55,3 +56,8 @@ public class TrainingSetDTO extends ExtendedDTO {
         this.exercise = exercise;
     }
 }
+
+
+
+
+

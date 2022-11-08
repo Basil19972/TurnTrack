@@ -1,0 +1,11 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ù»îì
+S	java:S106&"9Replace this use of System.out or System.err by a logger.(ÜÝÞ€úÿÿÿÿ
+c
+java:S1128"MRemove this unused import 'com.example.jwt.domain.excercise.dto.ExerciseDTO'.(çñö…
+J
+java:S1128"/Remove this unused import 'java.util.Optional'.(¨˜ëÝüÿÿÿÿ
+E
+java:S1128"*Remove this unused import 'java.util.Set'.(ö²„¤þÿÿÿÿ
+F
+java:S1128"+Remove this unused import 'java.util.UUID'.(ÀãÄ£úÿÿÿÿ

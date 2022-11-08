@@ -38,18 +38,10 @@ public class WeekDayServiceImpl extends ExtendedServiceImpl<WeekDay> implements 
     @Override
     public WeekDay create(WeekDay weekDay) {
 
-        save(weekDay);
 
-        ArrayList<Exercise> exercises = new ArrayList<>();
-        weekDay.getExercises().forEach(exercise -> exercises.add(exerciseService.findByID(exercise.getId())));
 
-        //Save the TrainingSets
-        for(int i = 0; i < weekDay.getExercises().size(); i++ ){
-            int amountOffSets = exercises.get(i).getAmountOfSets();
-            trainingSetService.createDefaultTrainingSet(weekDay, amountOffSets, exercises.get(i));
-        }
 
-      return findById(weekDay.getId());
+      return save(weekDay);
 
     }
 

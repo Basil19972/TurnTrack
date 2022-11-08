@@ -10,7 +10,7 @@ import java.util.Set;
 
 
 @Entity
-@Table(name = "TrainingSet")
+@Table(name = "trainingSet")
 public class TrainingSet extends ExtendedEntity {
 
     @Column(name = "weight", nullable = false)
@@ -19,35 +19,38 @@ public class TrainingSet extends ExtendedEntity {
     @Column(name = "repetitions", nullable = false)
     private int repetitions;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "weekDay_id")
-    private WeekDay weekDay;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "exercise_id")
     private Exercise exercise;
 
 
-    @OneToMany(mappedBy = "trainingSet", cascade = CascadeType.ALL )
+    @OneToMany(mappedBy = "trainingSet", cascade = CascadeType.PERSIST )
     private Set<TrainingDone> trainingDones;
 
-    public TrainingSet(int weight, int repetitions, WeekDay weekDay, Exercise exercise, Set<TrainingDone> trainingDones) {
+
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @JoinTable(
+            name = "trainingSets_Weekday",
+            joinColumns = @JoinColumn(name = "trainingSet_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "weekday_id", referencedColumnName = "id")
+    )
+    private Set<WeekDay> weekDays ;
+
+
+
+
+    public TrainingSet(int weight, int repetitions, Exercise exercise, Set<TrainingDone> trainingDones, Set<WeekDay> weekDays) {
         this.weight = weight;
         this.repetitions = repetitions;
-        this.weekDay = weekDay;
         this.exercise = exercise;
         this.trainingDones = trainingDones;
+        this.weekDays = weekDays;
     }
 
     public TrainingSet() {
-    }
 
-    public Set<TrainingDone> getTrainingDones() {
-        return trainingDones;
-    }
-
-    public void setTrainingDones(Set<TrainingDone> trainingDones) {
-        this.trainingDones = trainingDones;
     }
 
     public int getWeight() {
@@ -66,19 +69,27 @@ public class TrainingSet extends ExtendedEntity {
         this.repetitions = repetitions;
     }
 
-    public WeekDay getWeekDay() {
-        return weekDay;
-    }
-
-    public void setWeekDay(WeekDay weekDay) {
-        this.weekDay = weekDay;
-    }
-
     public Exercise getExercise() {
         return exercise;
     }
 
     public void setExercise(Exercise exercise) {
         this.exercise = exercise;
+    }
+
+    public Set<TrainingDone> getTrainingDones() {
+        return trainingDones;
+    }
+
+    public void setTrainingDones(Set<TrainingDone> trainingDones) {
+        this.trainingDones = trainingDones;
+    }
+
+    public Set<WeekDay> getWeekDays() {
+        return weekDays;
+    }
+
+    public void setWeekDays(Set<WeekDay> weekDays) {
+        this.weekDays = weekDays;
     }
 }

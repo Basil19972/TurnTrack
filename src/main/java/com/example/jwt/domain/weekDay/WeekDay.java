@@ -23,14 +23,6 @@ public class WeekDay extends ExtendedEntityAudit {
     private String dayName;
 
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
-    @JoinTable(
-            name = "weekDay_trainingSets",
-            joinColumns = @JoinColumn(name = "weekDay_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "trainingSet_id", referencedColumnName = "id")
-    )    private Set<TrainingSet> trainingSets;
-
-
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinTable(
@@ -40,10 +32,9 @@ public class WeekDay extends ExtendedEntityAudit {
     )    private Set<Exercise> exercises;
 
 
-    public WeekDay(String dayPlanname, String dayName, Set<TrainingSet> trainingSets, Set<Exercise> exercises) {
+    public WeekDay(String dayPlanname, String dayName, Set<Exercise> exercises) {
         this.dayPlanname = dayPlanname;
         this.dayName = dayName;
-        this.trainingSets = trainingSets;
         this.exercises = exercises;
     }
 
@@ -68,13 +59,7 @@ public class WeekDay extends ExtendedEntityAudit {
         this.dayName = dayName;
     }
 
-    public Set<TrainingSet> getTrainingSets() {
-        return trainingSets;
-    }
 
-    public void setTrainingSets(Set<TrainingSet> trainingSets) {
-        this.trainingSets = trainingSets;
-    }
 
     public Set<Exercise> getExercises() {
         return exercises;
